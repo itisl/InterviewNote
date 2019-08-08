@@ -1,6 +1,6 @@
 # define
 宏在编译时展开，将宏定义替换
-
+```cpp
 	#define FOREVER for(;;) //死循环
 	#define CASE break;case 
 
@@ -13,5 +13,6 @@
 	#define MIN(a, b) (((a)<(b))?(a):(b))
 	
 # enum hack
-	enum hack的行为某方面比较像#define而不像const，如对enum取址不合法；enum和#define一样绝不会导致非必要的内存分配；
-	    1 enum {value = 1};
+enum hack的行为某方面比较像`#define`而不像`const`，如对`enum`取址不合法；`enum`和`#define`一样绝不会导致非必要的内存分配；
+
+	enum {value = 1};
