@@ -1,6 +1,6 @@
 # define
 宏在编译时展开，将宏定义替换
-```cpp
+
 	#define FOREVER for(;;) //死循环
 	#define CASE break;case 
 
