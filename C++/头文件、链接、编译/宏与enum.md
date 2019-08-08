@@ -1,7 +1,7 @@
-# 宏在编译时展开
-	# define
-	    1 #define FOREVER for(;;)  //死循环
-	    2 #define CASE break;case 
+# define
+宏在编译时展开
+		#define FOREVER for(;;) //死循环
+#define CASE break;case 
 	避免使用的宏：
 	    1 #define PI 3.14
 	
