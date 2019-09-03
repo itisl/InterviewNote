@@ -62,6 +62,45 @@ UnaryFunction for_each(InputIt first, InputIt last, UnaryFunction f)
     obj(100);
     ```
 ### 3. lambda表达式
-//TODO
+**lambda表达式的作用**：
+> 1. 函数指针和仿函数较复杂，lambda表达式简洁，不需要实现类
+> 2. 匿名内包的形式不会产生多余的函数名
+> 3. 代码表达能力强，提高代码清晰度
+#### lambda
+[&a, b](int i) mutable{}noexcept -> int  // 颜色为可选项，最简单形式为[]{}
+a. []捕获列表，指明环境中哪些名字能用在lambda表达式内(作用域)，以&为前缀的局部名字通过引用捕获，否则以值捕获(创建变量的副本)
+[&] 引用隐式捕获，所以局部变量都能捕获，通过引用访问
+[=] 值隐式捕获，其他同上
+[捕获列表] 显示捕获，只捕获列表中变量
+[&, 捕获列表] 捕获列表可以出现this，不能使用&; 不在列表中的变量引用隐式捕获
+[=, 捕获列表] 捕获列表不可以出现this，必须使用&; 不在列表中的变量值隐式捕获
+b. ()参数列表，lambda函数所需参数，可选
+c. mutable 可选，可能会修改通过值捕获的变量的状态(不是通过引用捕获的变量的状态)
+d. noexcept 可选，lambda不会发出异常
+e. ->尾置类型，可选，声明返回的类型
+#### lambda与this
+lambda用在成员函数，把this添加到捕获列表，[this]通过this访问，而非拷贝。[this]和[=]不兼容，所以在多线程中可能产生竞争。
+4. lambda表达式类型: std::function<R()>
+可以赋值给函数指针, R为返回类型
+a. 给lambda起名字
+auto name = [&](){...};
+b. 赋值给函数指针(捕获列表必须为空)
+int (*p)(int) = [](int a){return a+1};
+c. 递归：使用递归函数之前必须知道函数返回类型
+function<void(char *b, char *e)> rev = [&](char *b, char *e){
+    if(b-e>1){swap(*b,*--e); rev(++b, e);}
+} // 用来逆序char[]字符串
+5. 捕捉表达式（定义的是变量，不是函数，lambda需要有返回值）
+// 利用表达式捕获，可以更灵活地处理作用域内的变量
+int x = 4;
+auto y = [&r = x, x = x + 1] { r += 2; return x * x; }();
+// 此时 x 更新为6，y 为25
+// 直接用字面值初始化变量，此时z是const char* 类型，不是函数
+auto z = [str = "string"]{ return str; }();
+
+6. 泛型lambda（和模板一样，参数类型自动推断）
+auto add = [](auto x, auto y) { return x + y; };
+int x = add(2, 3);   // 5
+double y = add(2.5, 3.5);  // 6.0
 
 ---
