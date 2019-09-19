@@ -1,17 +1,23 @@
-class Fraction
+template<class T>
+class shared_ptr
 {
-private:
-    int numerator_; // 分子
-    int denomirator_; // 分母
 public:
-    // 加上默认参数，构成单参数构造函数
-    Fraction(int numerator, int denomirator=1)
-    :numerator_(numerator), denomirator_(denomirator){ };
-    
-    Fraction operator+(){
-        return Fraction(...);
+    T* operator->() const{
+        return px;
     }
+    T* operator*() const{
+        return *px;
+    }
+    shared_ptr(T* p): px(p){}
+private:
+    T* px;
+    long* pn;
+    ...
 };
+struct Foo
+{
+    ...
+    void method(void);
+};
+shared_ptr<Foo> sp(new Foo)
 
-Fraction f(3, 5);
-double d = 4 + f; // 调用构造函数将4转换为F(4,1), 然后调用operator+
