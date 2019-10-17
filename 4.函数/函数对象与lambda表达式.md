@@ -11,17 +11,21 @@ void (*p1)(int) = &f;
 void (*p2)(int) = f; // 与 &f 相同
 ```
 
-### 2. 仿函数
+### 2. 仿函数(functor)
 **仿函数**：实质上就是一个重载了`operator()`操作符的类，概念上是函数指针的功能。
 
 > 1. 函数对象可以将附加数据保存在成员变量中，从而实现携带附加数据，而函数指针不行。
 > 2. 将`operator()`设置为`inline`函数，可以提高速度
 
 函数对象在概念上偏向于函数，而不是类。标准风格应使用结构体`struct`。
+`unary_function`, `binary_function`与适配器兼容的一元函数、二元函数基类(C++11 中弃用)(C++17 中移除)
+ 
+
+
 ```cpp
-struct Output : public unary_function<int,void>{ //单目函数对象unary_function
+struct Output{
     void operator()(int __n){
-        cout<<__n<<" ";
+        cout << __n << " ";
     }
 };
 int main(){
