@@ -8,7 +8,7 @@ int main(){
     //对a取地址
     p =(int*)&a;
     *p=20;
-    cout<<a<<" "<<&a<<endl;
-    cout<<*p<<' '<< p<<endl;
+    cout<<a<<endl;
+    cout<<*p<<endl;
     return 0;
 }
