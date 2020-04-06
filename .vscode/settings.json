@@ -72,5 +72,6 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "python.pythonPath": "C:\\PATHS\\python3\\python.exe"
 }
