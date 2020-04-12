@@ -95,3 +95,6 @@ int close(int fd);
 `close`一个TCP `socket`的缺省行为时把该`socket`标记为以关闭，然后立即返回到调用进程。该描述字不能再由调用进程使用，也就是说不能再作为`read`或`write`的第一个参数。
 
 注意：`close`操作只是使相应socket描述字的引用计数-1，只有当引用计数为0的时候，才会触发TCP客户端向服务器发送终止连接请求。
+
+// TODO poll epoll 
+![20200412195010](https://i.loli.net/2020/04/12/dZenGxamENRzAVW.png)
