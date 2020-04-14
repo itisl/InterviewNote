@@ -7,33 +7,24 @@
     "structure": {
       "readme": "README.md"
     },
-    "links" : {
-    "sidebar" : {
-        "Home" : "https://www.baidu.com"
-    }
-},
 
 "plugins": [
     "-sharing",
-    "sharing-plus",
     "splitter",
     "back-to-top-button",
-    "github",
-    "github-buttons",
     "donate",
     "copy-code-button",
     "todo",
     "-lunr", 
     "-search", 
     "search-pro",
-    "ancre-navigation",
     "klipse"
 ],
 "pluginsConfig": {
     "donate": {
         "alipay": "./imgs/donate.png",
-        "title": "阿姨，使不得",
-        "button": "打赏",
+        "title": "",
+        "button": "使不得",
         "alipayText": " "
     },
     "sharing": {
