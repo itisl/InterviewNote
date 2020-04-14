@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1777,9 +1777,9 @@
 </ol>
 </blockquote>
 <p>&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x7684;&#x683C;&#x5F0F;&#xFF1A;</p>
-<pre class="language-"><code class="lang-cpp">type <span class="token keyword">operator</span> &#x8FD0;&#x7B97;&#x7B26;&#x540D;&#x79F0;<span class="token punctuation">(</span>parm<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp">type <span class="hljs-keyword">operator</span> &#x8FD0;&#x7B97;&#x7B26;&#x540D;&#x79F0;(parm){
+    ...
+}
 </code></pre>
 <h4 id="&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x7684;&#x89C4;&#x5219;">&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x7684;&#x89C4;&#x5219;</h4>
 <blockquote>
@@ -1791,95 +1791,95 @@
 </blockquote>
 <h4 id="&#x4E0D;&#x80FD;&#x88AB;&#x91CD;&#x8F7D;&#x7684;&#x8FD0;&#x7B97;&#x7B26;">&#x4E0D;&#x80FD;&#x88AB;&#x91CD;&#x8F7D;&#x7684;&#x8FD0;&#x7B97;&#x7B26;</h4>
 <p>&#x4E0B;&#x5217;5&#x4E2A;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x88AB;&#x91CD;&#x8F7D;&#xFF1A;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token operator">::</span>      <span class="token punctuation">.</span><span class="token operator">*</span>       <span class="token punctuation">.</span>     <span class="token operator">?</span><span class="token operator">:</span>   <span class="token keyword">sizeof</span>
+<pre><code class="lang-cpp">::      .*       .     ?:   <span class="hljs-keyword">sizeof</span>
 </code></pre>
 <p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x9017;&#x53F7;<code>,</code>&#x3001;&#x53D6;&#x5730;&#x5740;<code>&amp;</code>&#x3001;&#x903B;&#x8F91;&#x4E0E;<code>&amp;&amp;</code>&#x6216;<code>and</code>&#x3001;&#x903B;&#x8F91;&#x6216;<code>||</code>&#x6216;<code>or</code>&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x91CD;&#x8F7D;</p>
 <h4 id="&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;&#x7684;&#x8FD0;&#x7B97;&#x7B26;">&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x8F7D;&#x7684;&#x8FD0;&#x7B97;&#x7B26;</h4>
-<pre class="language-"><code class="lang-cpp">    <span class="token operator">+</span>  <span class="token operator">-</span>   <span class="token operator">*</span>   <span class="token operator">/</span>   <span class="token operator">%</span>   <span class="token operator">^</span>   <span class="token operator">&amp;</span>   <span class="token operator">|</span>   <span class="token operator">~</span>   <span class="token operator">!</span>   
-    <span class="token operator">=</span>   <span class="token operator">&lt;</span>   <span class="token operator">&gt;</span>   <span class="token operator">+=</span>   <span class="token operator">-=</span>   <span class="token operator">*=</span>   <span class="token operator">/=</span>   <span class="token operator">%</span> <span class="token operator">=</span>   
-    <span class="token operator">^=</span>   <span class="token operator">&amp;=</span>   <span class="token operator">|=</span>   <span class="token operator">&lt;&lt;</span>   <span class="token operator">&gt;&gt;</span>   <span class="token operator">&lt;&lt;=</span>   <span class="token operator">&gt;&gt;=</span>   
-    <span class="token operator">==</span>   <span class="token operator">!=</span>   <span class="token operator">&lt;=</span>   <span class="token operator">&gt;=</span>   <span class="token operator">&amp;&amp;</span>  <span class="token operator">||</span>   <span class="token operator">++</span>   <span class="token operator">--</span>   
-    <span class="token punctuation">,</span>   <span class="token operator">-&gt;</span><span class="token operator">*</span>   <span class="token operator">-&gt;</span>   <span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token punctuation">[</span><span class="token punctuation">]</span>   <span class="token keyword">new</span>   <span class="token keyword">new</span><span class="token punctuation">[</span><span class="token punctuation">]</span>   
-    <span class="token keyword">delete</span>   <span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<pre><code class="lang-cpp">    +  -   *   /   %   ^   &amp;   |   ~   !   
+    =   &lt;   &gt;   +=   -=   *=   /=   % =   
+    ^=   &amp;=   |=   &lt;&lt;   &gt;&gt;   &lt;&lt;=   &gt;&gt;=   
+    ==   !=   &lt;=   &gt;=   &amp;&amp;  ||   ++   --   
+    ,   -&gt;*   -&gt;   ()   []   <span class="hljs-keyword">new</span>   <span class="hljs-keyword">new</span>[]   
+    <span class="hljs-keyword">delete</span>   <span class="hljs-keyword">delete</span>[]
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;1&#xFF1A;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;">&#x793A;&#x4F8B;1&#xFF1A;&#x91CD;&#x8F7D;<code>+</code>&#x8FD0;&#x7B97;&#x7B26;</h5>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">//&#x4EE5;&#x5168;&#x5C40;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;`+`</span>
-<span class="token keyword">class</span> <span class="token class-name">Complex</span><span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">friend</span> Complex <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">const</span> Complex <span class="token operator">&amp;</span>c1<span class="token punctuation">,</span> <span class="token keyword">const</span> Complex <span class="token operator">&amp;</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//&#x91CD;&#x8F7D;+&#x8FD0;&#x7B97;&#x7B26;</span>
-<span class="token punctuation">}</span>
-Complex <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">const</span> Complex <span class="token operator">&amp;</span>c1<span class="token punctuation">,</span> <span class="token keyword">const</span> Complex <span class="token operator">&amp;</span>c2<span class="token punctuation">)</span><span class="token punctuation">{</span>
-Complex c<span class="token punctuation">;</span>
-c<span class="token punctuation">.</span>real_ <span class="token operator">=</span> c1<span class="token punctuation">.</span>real_ <span class="token operator">+</span> c2<span class="token punctuation">.</span>real_<span class="token punctuation">;</span>
-c<span class="token punctuation">.</span>imag_ <span class="token operator">=</span> c1<span class="token punctuation">.</span>imag_ <span class="token operator">+</span> c2<span class="token punctuation">.</span>imag_<span class="token punctuation">;</span>
-<span class="token keyword">return</span> c<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">//&#x4EE5;&#x5168;&#x5C40;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;`+`</span>
+<span class="hljs-keyword">class</span> Complex{
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">friend</span> Complex <span class="hljs-keyword">operator</span>+(<span class="hljs-keyword">const</span> Complex &amp;c1, <span class="hljs-keyword">const</span> Complex &amp;c2);
+<span class="hljs-comment">//&#x91CD;&#x8F7D;+&#x8FD0;&#x7B97;&#x7B26;</span>
+}
+Complex <span class="hljs-keyword">operator</span>+(<span class="hljs-keyword">const</span> Complex &amp;c1, <span class="hljs-keyword">const</span> Complex &amp;c2){
+Complex c;
+c.real_ = c1.real_ + c2.real_;
+c.imag_ = c1.imag_ + c2.imag_;
+<span class="hljs-keyword">return</span> c;
+}
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;2&#xFF1A;&#x91CD;&#x8F7D;&#x590D;&#x5408;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;">&#x793A;&#x4F8B;2&#xFF1A;&#x91CD;&#x8F7D;&#x590D;&#x5408;&#x8D4B;&#x503C;<code>+=</code>&#x8FD0;&#x7B97;&#x7B26;</h5>
-<pre class="language-"><code class="lang-cpp"> <span class="token comment">//&#x4EE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;+=&#xFF0C;&#x53CC;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x8FD4;&#x56DE;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x53EF;&#x4F5C;&#x4E3A;&#x5DE6;&#x503C;</span>
- Complex <span class="token operator">&amp;</span> Complex<span class="token operator">::</span><span class="token keyword">operator</span><span class="token operator">+=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Complex <span class="token operator">&amp;</span>c<span class="token punctuation">)</span><span class="token punctuation">{</span>
- <span class="token keyword">this</span><span class="token operator">-&gt;</span>real_ <span class="token operator">+=</span> c<span class="token punctuation">.</span>real_<span class="token punctuation">;</span>
- <span class="token keyword">this</span><span class="token operator">-&gt;</span>imag_ <span class="token operator">+=</span> c<span class="token punctuation">.</span>imag_<span class="token punctuation">;</span>
- <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
+<pre><code class="lang-cpp"> <span class="hljs-comment">//&#x4EE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;+=&#xFF0C;&#x53CC;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x8FD4;&#x56DE;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x53EF;&#x4F5C;&#x4E3A;&#x5DE6;&#x503C;</span>
+ Complex &amp; Complex::<span class="hljs-keyword">operator</span>+=(<span class="hljs-keyword">const</span> Complex &amp;c){
+ <span class="hljs-keyword">this</span>-&gt;real_ += c.real_;
+ <span class="hljs-keyword">this</span>-&gt;imag_ += c.imag_;
+ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+ }
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;3&#xFF1A;&#x91CD;&#x8F7D;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;&#x548C;">&#x793A;&#x4F8B;3&#xFF1A;&#x91CD;&#x8F7D;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;<code>&gt;&gt;</code>&#x548C;<code>&lt;&lt;</code></h5>
 <p>&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;&#x5FC5;&#x987B;&#x662F;&#x975E;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x80FD;&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x5426;&#x5219;&#x5DE6;&#x4FA7;&#x8FD0;&#x7B97;&#x5BF9;&#x8C61;&#x5C06;&#x662F;&#x5F53;&#x524D;&#x7C7B;&#xFF0C;&#x65E0;&#x6CD5;&#x5B8C;&#x6210;&#x8F93;&#x5165;&#x3002;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x4EE5;&#x5168;&#x5C40;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;&gt;&gt;&#xFF0C;&#x7528;&#x6765;&#x8F93;&#x5165;&#x590D;&#x6570;</span>
-istream <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">(</span>istream <span class="token operator">&amp;</span>is<span class="token punctuation">,</span> complex <span class="token operator">&amp;</span>A<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//&#x8FD4;&#x56DE;&#x5F15;&#x7528;&#xFF0C;&#x76EE;&#x7684;&#x4E3A;&#x80FD;&#x591F;&#x8FDE;&#x7EED;&#x8BFB;&#x53D6;</span>
-is <span class="token operator">&gt;&gt;</span> A<span class="token punctuation">.</span>real_ <span class="token operator">&gt;&gt;</span> A<span class="token punctuation">.</span>imag_<span class="token punctuation">;</span>
-<span class="token keyword">return</span> is<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x4EE5;&#x5168;&#x5C40;&#x51FD;&#x6570;&#x7684;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;&gt;&gt;&#xFF0C;&#x7528;&#x6765;&#x8F93;&#x5165;&#x590D;&#x6570;</span>
+istream &amp;<span class="hljs-keyword">operator</span>&gt;&gt;(istream &amp;is, <span class="hljs-keyword">complex</span> &amp;A){<span class="hljs-comment">//&#x8FD4;&#x56DE;&#x5F15;&#x7528;&#xFF0C;&#x76EE;&#x7684;&#x4E3A;&#x80FD;&#x591F;&#x8FDE;&#x7EED;&#x8BFB;&#x53D6;</span>
+is &gt;&gt; A.real_ &gt;&gt; A.imag_;
+<span class="hljs-keyword">return</span> is;
+}
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;4&#xFF1A;&#x91CD;&#x8F7D;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;">&#x793A;&#x4F8B;4&#xFF1A;&#x91CD;&#x8F7D;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;<code>&lt;&lt;</code></h5>
 <p>&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;&#x5E94;&#x5C3D;&#x91CF;&#x51CF;&#x5C11;&#x683C;&#x5F0F;&#x5316;&#x64CD;&#x4F5C;&#xFF0C;&#x4EE5;&#x4FBF;&#x8BA9;&#x7528;&#x6237;&#x80FD;&#x63A7;&#x5236;&#x8F93;&#x51FA;&#x7684;&#x7EC6;&#x8282;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">//&#x5BF9;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;&gt;&gt;&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#xFF0C;&#x8BA9;&#x5B83;&#x80FD;&#x591F;&#x8F93;&#x51FA;&#x590D;&#x6570;</span>
-ostream <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>ostream <span class="token operator">&amp;</span>os<span class="token punctuation">,</span> complex <span class="token operator">&amp;</span>A<span class="token punctuation">)</span><span class="token punctuation">{</span>
-os <span class="token operator">&lt;&lt;</span> A<span class="token punctuation">.</span>real_ <span class="token operator">&lt;&lt;</span><span class="token string">&quot; + &quot;</span><span class="token operator">&lt;&lt;</span> A<span class="token punctuation">.</span>imag_ <span class="token operator">&lt;&lt;</span><span class="token string">&quot; i &quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">return</span> os<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">//&#x5BF9;&#x8F93;&#x51FA;&#x8FD0;&#x7B97;&#x7B26;&gt;&gt;&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#xFF0C;&#x8BA9;&#x5B83;&#x80FD;&#x591F;&#x8F93;&#x51FA;&#x590D;&#x6570;</span>
+ostream &amp;<span class="hljs-keyword">operator</span>&lt;&lt;(ostream &amp;os, <span class="hljs-keyword">complex</span> &amp;A){
+os &lt;&lt; A.real_ &lt;&lt;<span class="hljs-string">&quot; + &quot;</span>&lt;&lt; A.imag_ &lt;&lt;<span class="hljs-string">&quot; i &quot;</span>;
+<span class="hljs-keyword">return</span> os;
+}
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;5&#xFF1A;&#x91CD;&#x8F7D;&#x4E0B;&#x6807;&#x8FD0;&#x7B97;&#x7B26;">&#x793A;&#x4F8B;5&#xFF1A;&#x91CD;&#x8F7D;&#x4E0B;&#x6807;&#x8FD0;&#x7B97;&#x7B26;<code>[]</code></h5>
 <p>&#x5355;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x5FC5;&#x987B;&#x4EE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#xFF0C;<code>[]</code>&#x662F;&#x540E;&#x7F6E;&#x8FD0;&#x7B97;&#x7B26;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">//&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;</span>
-<span class="token keyword">int</span> <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token keyword">return</span> data_<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment">//&#x53EA;&#x80FD;&#x8BBF;&#x95EE;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#xFF0C;&#x4E3A;&#x4E86;&#x9002;&#x5E94;const int&amp; Array::operator[](int i)</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">&amp;</span>Array<span class="token operator">::</span><span class="token keyword">operator</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span>
-<span class="token keyword">return</span> data_<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">//&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;</span>
+<span class="hljs-keyword">int</span> &amp;<span class="hljs-keyword">operator</span>[](<span class="hljs-keyword">int</span> i){
+<span class="hljs-keyword">return</span> data_[i];
+}
+<span class="hljs-comment">//&#x53EA;&#x80FD;&#x8BBF;&#x95EE;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#xFF0C;&#x4E3A;&#x4E86;&#x9002;&#x5E94;const int&amp; Array::operator[](int i)</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;Array::<span class="hljs-keyword">operator</span>[](<span class="hljs-keyword">int</span> i) <span class="hljs-keyword">const</span>{
+<span class="hljs-keyword">return</span> data_[i];
+}
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;6&#xFF1A;&#x91CD;&#x8F7D;&#x81EA;&#x589E;&#x548C;&#x81EA;&#x51CF;--&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;">&#x793A;&#x4F8B;6&#xFF1A;&#x91CD;&#x8F7D;&#x81EA;&#x589E;<code>++</code>&#x548C;&#x81EA;&#x51CF;<code>--</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</h5>
 <p>&#x5BF9;++&#x8FD0;&#x7B97;&#x7B26;&#x4EE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x8F7D;&#xFF0C;&#x6709;&#x524D;&#x7F6E;&#x548C;&#x540E;&#x7F6E;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;</p>
-<pre class="language-"><code class="lang-cpp">A <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//++i&#xFF0C;&#x524D;&#x7F6E;&#x5F62;&#x5F0F;&#x3002;&#x4E3A;&#x4E86;&#x4E0E;&#x5185;&#x7F6E;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x5E94;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;</span>
-A <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//i++&#xFF0C;&#x540E;&#x7F6E;&#x5F62;&#x5F0F;&#xFF0C;&#x53C2;&#x6570;int&#x6CA1;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x533A;&#x5206;&#x524D;&#x7F6E;&#x548C;&#x540E;&#x7F6E;</span>
-A<span class="token operator">::</span>A <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token keyword">return</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//run&#x8FD4;&#x56DE;&#x589E;&#x52A0;&#x540E;&#x7684;&#x503C;</span>
-<span class="token punctuation">}</span>
-A<span class="token operator">::</span>A <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-A temp <span class="token operator">=</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
-<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">return</span> temp<span class="token punctuation">;</span><span class="token comment">//temp&#x4FDD;&#x5B58;&#x539F;&#x6765;&#x7684;&#x503C;</span>
- <span class="token punctuation">}</span>
+<pre><code class="lang-cpp">A &amp;<span class="hljs-keyword">operator</span>++(); <span class="hljs-comment">//++i&#xFF0C;&#x524D;&#x7F6E;&#x5F62;&#x5F0F;&#x3002;&#x4E3A;&#x4E86;&#x4E0E;&#x5185;&#x7F6E;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x5E94;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;</span>
+A <span class="hljs-keyword">operator</span>++(<span class="hljs-keyword">int</span>); <span class="hljs-comment">//i++&#xFF0C;&#x540E;&#x7F6E;&#x5F62;&#x5F0F;&#xFF0C;&#x53C2;&#x6570;int&#x6CA1;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x533A;&#x5206;&#x524D;&#x7F6E;&#x548C;&#x540E;&#x7F6E;</span>
+A::A &amp;<span class="hljs-keyword">operator</span>++(){
+<span class="hljs-keyword">return</span> run();<span class="hljs-comment">//run&#x8FD4;&#x56DE;&#x589E;&#x52A0;&#x540E;&#x7684;&#x503C;</span>
+}
+A::A <span class="hljs-keyword">operator</span>++(<span class="hljs-keyword">int</span> n){
+A temp = *<span class="hljs-keyword">this</span>;
+run();
+<span class="hljs-keyword">return</span> temp;<span class="hljs-comment">//temp&#x4FDD;&#x5B58;&#x539F;&#x6765;&#x7684;&#x503C;</span>
+ }
 </code></pre>
 <h5 id="&#x793A;&#x4F8B;7&#xFF1A;&#x91CD;&#x8F7D;new&#x548C;delete&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;">&#x793A;&#x4F8B;7&#xFF1A;&#x91CD;&#x8F7D;<code>new</code>&#x548C;<code>delete</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF1A;</h5>
 <p>&#x53EF;&#x4EE5;&#x4EE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;&#x6216;&#x5168;&#x5C40;&#x51FD;&#x6570;&#x5F62;&#x5F0F;&#x91CD;&#x8F7D;<code>new</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5728;&#x91CD;&#x8F7D;<code>new</code>&#x6216;<code>new[]</code>&#x65F6;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x4F5C;&#x4E3A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x8FD8;&#x662F;&#x4F5C;&#x4E3A;&#x5168;&#x5C40;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;<code>size_t</code>&#x7C7B;&#x578B;&#x3002;<code>size_t</code>&#x8868;&#x793A;&#x7684;&#x662F;&#x8981;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5BF9;&#x4E8E;<code>new[]</code>&#x7684;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x800C;&#x8A00;&#xFF0C;<code>size_t</code>&#x5219;&#x8868;&#x793A;&#x6240;&#x9700;&#x8981;&#x5206;&#x914D;&#x7684;&#x6240;&#x6709;&#x7A7A;&#x95F4;&#x7684;&#x603B;&#x548C;&#x3002;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> <span class="token operator">*</span> className<span class="token operator">::</span><span class="token keyword">operator</span> <span class="token keyword">new</span><span class="token punctuation">(</span>size_t size<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token operator">*</span> <span class="token keyword">operator</span> <span class="token keyword">new</span><span class="token punctuation">(</span>size_t size<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//&#x5168;&#x5C40;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> * className::<span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">new</span><span class="hljs-params">(size_t size)</span></span>{<span class="hljs-comment">//&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
+    ...
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> * <span class="hljs-keyword">operator</span> <span class="hljs-title">new</span><span class="hljs-params">(size_t size)</span></span>{<span class="hljs-comment">//&#x5168;&#x5C40;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
+    ...
+}
 </code></pre>
 <p>&#x91CD;&#x8F7D;<code>delete</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4E24;&#x79CD;&#x91CD;&#x8F7D;&#x5F62;&#x5F0F;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x90FD;&#x662F;<code>void</code>&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x90FD;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;<code>void</code>&#x7C7B;&#x578B;&#x7684;&#x6307;&#x9488;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x6307;&#x9488;&#x6307;&#x5411;&#x9700;&#x8981;&#x91CA;&#x653E;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> className<span class="token operator">::</span><span class="token keyword">operator</span> <span class="token keyword">delete</span><span class="token punctuation">(</span> <span class="token keyword">void</span> <span class="token operator">*</span>ptr<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token keyword">operator</span> <span class="token keyword">delete</span><span class="token punctuation">(</span> <span class="token keyword">void</span> <span class="token operator">*</span>ptr<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//&#x5168;&#x5C40;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> className::<span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">delete</span><span class="hljs-params">( <span class="hljs-keyword">void</span> *ptr)</span></span>{<span class="hljs-comment">//&#x6210;&#x5458;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
+    ...
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-keyword">operator</span> <span class="hljs-title">delete</span><span class="hljs-params">( <span class="hljs-keyword">void</span> *ptr)</span></span>{<span class="hljs-comment">//&#x5168;&#x5C40;&#x51FD;&#x6570;&#x5F62;&#x5F0F;</span>
+    ...
+}
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
@@ -1923,7 +1923,7 @@ A temp <span class="token operator">=</span> <span class="token operator">*</spa
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"4.3 函数重载","level":"1.2.4.3","depth":3,"next":{"title":"4.4 转换函数","level":"1.2.4.4","depth":3,"path":"1.C++/4.函数/4.转换函数.md","ref":"1.C++/4.函数/4.转换函数.md","articles":[]},"previous":{"title":"4.2 函数参数与返回值","level":"1.2.4.2","depth":3,"path":"1.C++/4.函数/2.函数参数与返回值.md","ref":"1.C++/4.函数/2.函数参数与返回值.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/4.函数/3.函数重载.md","mtime":"2020-03-21T14:45:40.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"4.3 函数重载","level":"1.2.4.3","depth":3,"next":{"title":"4.4 转换函数","level":"1.2.4.4","depth":3,"path":"1.C++/4.函数/4.转换函数.md","ref":"1.C++/4.函数/4.转换函数.md","articles":[]},"previous":{"title":"4.2 函数参数与返回值","level":"1.2.4.2","depth":3,"path":"1.C++/4.函数/2.函数参数与返回值.md","ref":"1.C++/4.函数/2.函数参数与返回值.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/4.函数/3.函数重载.md","mtime":"2020-03-21T14:45:40.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

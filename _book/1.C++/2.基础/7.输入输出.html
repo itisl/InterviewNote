@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1762,39 +1762,39 @@
 						<hr>
 <h2 id="cin&#x4E0E;cout"><code>cin</code>&#x4E0E;<code>cout</code></h2>
 <p><code>getline(istream is,string&amp; str,&#x7ED3;&#x675F;&#x7B26;=&quot;\n&quot;)</code></p>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x5DF2;&#x77E5;&#x4E2A;&#x6570;&#x6570;&#x636E;&#x8F93;&#x5165;&#xFF0C;&#x4EE5;&#x7A7A;&#x683C;&#x9694;&#x5F00;, \n &#x7ED3;&#x675F;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">&gt;&gt;</span>a<span class="token operator">&gt;&gt;</span>b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  cout <span class="token operator">&lt;&lt;</span> a <span class="token operator">+</span> b <span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// &#x591A;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x884C;&#x5F00;&#x5934;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x4E2A;&#x6570;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> e <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  cin <span class="token operator">&gt;&gt;</span> n<span class="token punctuation">;</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    cin <span class="token operator">&gt;&gt;</span> e<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x5DF2;&#x77E5;&#x4E2A;&#x6570;&#x6570;&#x636E;&#x8F93;&#x5165;&#xFF0C;&#x4EE5;&#x7A7A;&#x683C;&#x9694;&#x5F00;, \n &#x7ED3;&#x675F;</span>
+<span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b){
+  <span class="hljs-built_in">cout</span> &lt;&lt; a + b ;
+}
+<span class="hljs-comment">// &#x591A;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x884C;&#x5F00;&#x5934;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x4E2A;&#x6570;</span>
+<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+  <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>, e = <span class="hljs-number">0</span>;
+  <span class="hljs-built_in">cin</span> &gt;&gt; n;
+  <span class="hljs-keyword">while</span>(n--){
+    <span class="hljs-built_in">cin</span> &gt;&gt; e;
+  }
+}
 
-<span class="token comment">// &#x591A;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x884C;&#x4E0D;&#x5B9A;&#x4E2A;&#x6570;</span>
+<span class="hljs-comment">// &#x591A;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x884C;&#x4E0D;&#x5B9A;&#x4E2A;&#x6570;</span>
 
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span> s<span class="token punctuation">,</span> <span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  stringstream ss<span class="token punctuation">{</span>s<span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span>ss <span class="token operator">&gt;&gt;</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token function">stoi</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x5982;&#x679C;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<span class="hljs-keyword">while</span>(getline(<span class="hljs-built_in">cin</span>, s, <span class="hljs-string">&quot;,&quot;</span>)){
+  <span class="hljs-built_in">stringstream</span> ss{s};
+  <span class="hljs-keyword">while</span>(ss &gt;&gt; e){
+    stoi(e); <span class="hljs-comment">//&#x5982;&#x679C;</span>
+  }
+}
 </code></pre>
 <blockquote>
 <ol>
 <li><code>endl</code>&#x7B49;&#x4EF7;&#x4E8E;<code>&apos;\n&apos;&lt;&lt;flush</code>&#xFF0C;&#x4F1A;&#x5237;&#x65B0;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x9020;&#x6210;&#x6548;&#x7387;&#x4F4E;&#x4E0B;&#x3002;&#x63A8;&#x8350;&#x7528;<code>&apos;\n&apos;</code>&#x4EE3;&#x66FF;<code>endl</code>&#xFF1B;</li>
 <li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>tie()</code>&#x51FD;&#x6570;&#x89E3;&#x9664;<code>cin</code>&#x4E0E;<code>cout</code>&#x7684;&#x7ED1;&#x5B9A;&#xFF0C;&#x52A0;&#x5FEB;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6548;&#x7387;&#xFF1A;</p>
-<pre class="language-"><code class="lang-cpp">  std<span class="token operator">::</span>ios<span class="token operator">::</span><span class="token function">syn_with_stdio</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x89E3;&#x9664;stdio&#x7684;&#x517C;&#x5BB9;</span>
-  std<span class="token operator">::</span>cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
-  std<span class="token operator">::</span>cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp">  <span class="hljs-built_in">std</span>::ios::syn_with_stdio(<span class="hljs-literal">false</span>); <span class="hljs-comment">//&#x89E3;&#x9664;stdio&#x7684;&#x517C;&#x5BB9;</span>
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>.tie(<span class="hljs-literal">nullptr</span>);    
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>.tie(<span class="hljs-literal">nullptr</span>);
 </code></pre>
 </li>
 <li><p>&#x8F93;&#x51FA;&#x7CBE;&#x5EA6;&#x63A7;&#x5236;&#xFF1A;    </p>
-<pre class="language-"><code class="lang-cpp">cout<span class="token punctuation">.</span><span class="token function">precesion</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//3&#x4E3A;&#x6709;&#x6548;&#x6570;&#x5B57;</span>
+<pre><code class="lang-cpp"><span class="hljs-built_in">cout</span>.precesion(<span class="hljs-number">3</span>);<span class="hljs-comment">//3&#x4E3A;&#x6709;&#x6548;&#x6570;&#x5B57;</span>
 </code></pre>
 </li>
 <li>&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#xFF0C;&#x89C1;&#x683C;&#x5F0F;&#x5316;&#x5B57;&#x7B26;&#x4E32;</li>
@@ -1870,7 +1870,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"2.7 输入输出","level":"1.2.2.7","depth":3,"next":{"title":"2.8 数组、指针与引用","level":"1.2.2.8","depth":3,"path":"1.C++/2.基础/8.数组、指针与引用.md","ref":"1.C++/2.基础/8.数组、指针与引用.md","articles":[]},"previous":{"title":"2.6 类型转换","level":"1.2.2.6","depth":3,"path":"1.C++/2.基础/6.类型转换.md","ref":"1.C++/2.基础/6.类型转换.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/2.基础/7.输入输出.md","mtime":"2020-04-14T07:58:15.958Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"2.7 输入输出","level":"1.2.2.7","depth":3,"next":{"title":"2.8 数组、指针与引用","level":"1.2.2.8","depth":3,"path":"1.C++/2.基础/8.数组、指针与引用.md","ref":"1.C++/2.基础/8.数组、指针与引用.md","articles":[]},"previous":{"title":"2.6 类型转换","level":"1.2.2.6","depth":3,"path":"1.C++/2.基础/6.类型转换.md","ref":"1.C++/2.基础/6.类型转换.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/2.基础/7.输入输出.md","mtime":"2020-04-14T07:58:15.958Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

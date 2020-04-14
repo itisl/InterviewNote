@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1762,94 +1762,94 @@
 						<h2 id="&#x7C7B;&#x4F3C;&#x6307;&#x9488;&#x7684;&#x7C7B;pointer-like-class">&#x7C7B;&#x4F3C;&#x6307;&#x9488;&#x7684;&#x7C7B;(pointer-like-class)</h2>
 <h3 id="1-&#x667A;&#x80FD;&#x6307;&#x9488;">1. <a href="../7.&#x5185;&#x5B58;&#x6A21;&#x578B;/6.&#x667A;&#x80FD;&#x6307;&#x9488;&#x4E0E;&#x5185;&#x5B58;&#x56DE;&#x6536;.md">&#x667A;&#x80FD;&#x6307;&#x9488;</a></h3>
 <h4 id="11-sharedptr&#x7684;&#x5B9E;&#x73B0;">1.1 <code>shared_ptr</code>&#x7684;&#x5B9E;&#x73B0;</h4>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
-<span class="token keyword">class</span> <span class="token class-name">shared_ptr</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment">// &#x6784;&#x9020;&#x51FD;&#x6570;</span>
-    <span class="token function">shared_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">:</span><span class="token function">_ptr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>T<span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">_pCount</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token keyword">explicit</span> <span class="token function">shared_ptr</span><span class="token punctuation">(</span>T<span class="token operator">*</span> p<span class="token punctuation">)</span>
-        <span class="token operator">:</span><span class="token function">_ptr</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">_pConut</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token comment">// &#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
-    <span class="token function">shared_ptr</span><span class="token punctuation">(</span><span class="token keyword">const</span> shared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> ap<span class="token punctuation">)</span><span class="token operator">:</span>
-        <span class="token function">_ptr</span><span class="token punctuation">(</span>ap<span class="token punctuation">.</span>_ptr<span class="token punctuation">)</span>
-        <span class="token punctuation">,</span> <span class="token function">_pCount</span><span class="token punctuation">(</span>ap<span class="token punctuation">.</span>_pCount<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token operator">++</span><span class="token punctuation">(</span><span class="token operator">*</span>_pCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// &#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</span>
-    shared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> shared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> ap<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token comment">// &#x5904;&#x7406;&#x81EA;&#x6211;&#x8D4B;&#x503C;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>_ptr <span class="token operator">!=</span> ap<span class="token punctuation">.</span>_ptr<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token comment">// &#x5148;&#x9500;&#x6BC1;&#x539F;&#x6765;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span><span class="token punctuation">(</span><span class="token operator">*</span>_pCount<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">delete</span> _ptr<span class="token punctuation">;</span>
-                <span class="token keyword">delete</span> _pCount<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token comment">// &#x91CD;&#x65B0;&#x6307;&#x5411;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x8BA1;&#x6570;&#x5668;</span>
-            _ptr <span class="token operator">=</span> ap<span class="token punctuation">.</span>_ptr<span class="token punctuation">;</span>
-            _pCount <span class="token operator">=</span> ap<span class="token punctuation">.</span>_pCount<span class="token punctuation">;</span>
-            <span class="token operator">++</span><span class="token punctuation">(</span><span class="token operator">*</span>_pCount<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// &#x6790;&#x6784;&#x51FD;&#x6570;</span>
-    <span class="token operator">~</span><span class="token function">shared_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span><span class="token punctuation">(</span><span class="token operator">*</span>_pCount<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">delete</span> _ptr<span class="token punctuation">;</span>
-            <span class="token keyword">delete</span> _pCount<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// &#x7C7B;&#x6307;&#x9488;&#x884C;&#x4E3A;&#x7684;&#x5B9A;&#x4E49;</span>
-    T<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token operator">*</span>_ptr<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    T<span class="token operator">*</span> <span class="token keyword">operator</span><span class="token operator">-&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> _ptr<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    T<span class="token operator">*</span> _ptr<span class="token punctuation">;</span>
-    <span class="token keyword">int</span><span class="token operator">*</span> _pCount<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp">template&lt;class T&gt;
+class shared_ptr
+{
+public:
+    // &#x6784;&#x9020;&#x51FD;&#x6570;
+    shared_ptr()
+        :_ptr((T*)0), _pCount(new int(1)){}
+    explicit shared_ptr(T* p)
+        :_ptr(p), _pConut(new int(1)){}
+    // &#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;
+    shared_ptr(const shared_ptr&lt;T&gt;&amp; ap):
+        _ptr(ap._ptr)
+        , _pCount(ap._pCount){
+        ++(*_pCount);
+    }
+    // &#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;
+    shared_ptr&lt;T&gt;&amp; operator=(const shared_ptr&lt;T&gt;&amp; ap){
+        // &#x5904;&#x7406;&#x81EA;&#x6211;&#x8D4B;&#x503C;
+        if (_ptr != ap._ptr){
+            // &#x5148;&#x9500;&#x6BC1;&#x539F;&#x6765;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;
+            if (--(*_pCount) == 0){
+                delete _ptr;
+                delete _pCount;
+            }
+            // &#x91CD;&#x65B0;&#x6307;&#x5411;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x8BA1;&#x6570;&#x5668;
+            _ptr = ap._ptr;
+            _pCount = ap._pCount;
+            ++(*_pCount);
+        }
+        return *this;
+    }
+    // &#x6790;&#x6784;&#x51FD;&#x6570;
+    ~shared_ptr(){
+        if (--(*_pCount) == 0){
+            delete _ptr;
+            delete _pCount;
+        }
+    }
+    // &#x7C7B;&#x6307;&#x9488;&#x884C;&#x4E3A;&#x7684;&#x5B9A;&#x4E49;
+    T&amp; operator*(){
+        return *_ptr;
+    }
+    T* operator-&gt;(){
+        return _ptr;
+    }
+private:
+    T* _ptr;
+    int* _pCount;
+};
 
-shared_ptr<span class="token operator">&lt;</span>Foo<span class="token operator">&gt;</span> <span class="token function">sp</span><span class="token punctuation">(</span><span class="token keyword">new</span> Foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token operator">*</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x8C03;&#x7528;operator*</span>
-sp<span class="token operator">-&gt;</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x8C03;&#x7528;operator-&gt;(&#x7279;&#x6B8A;&#x884C;&#x4E3A;, &#x6307;&#x5411;&#x7B26;&#x4F1A;&#x7EE7;&#x7EED;&#x4F5C;&#x7528;&#x4E0B;&#x53BB;&#x4E0D;&#x4F1A;&#x88AB;&#x6D88;&#x8017;&#x6389;)&#x7F16;&#x8BD1;&#x5668;&#x5C06;sp-&gt;&#x89E3;&#x6790;&#x4E3A;px-&gt;</span>
+shared_ptr&lt;Foo&gt; sp(new Foo);
+f(*sp);// &#x8C03;&#x7528;operator*
+sp-&gt;method();// &#x8C03;&#x7528;operator-&gt;(&#x7279;&#x6B8A;&#x884C;&#x4E3A;, &#x6307;&#x5411;&#x7B26;&#x4F1A;&#x7EE7;&#x7EED;&#x4F5C;&#x7528;&#x4E0B;&#x53BB;&#x4E0D;&#x4F1A;&#x88AB;&#x6D88;&#x8017;&#x6389;)&#x7F16;&#x8BD1;&#x5668;&#x5C06;sp-&gt;&#x89E3;&#x6790;&#x4E3A;px-&gt;
 </code></pre>
 <h4 id="12-weakptr&#x7684;&#x5B9E;&#x73B0;">1.2 <code>weak_ptr</code>&#x7684;&#x5B9E;&#x73B0;</h4>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
-<span class="token keyword">class</span> <span class="token class-name">weak_ptr</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token function">weak_ptr</span><span class="token punctuation">(</span><span class="token keyword">const</span> shared_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> sp<span class="token punctuation">)</span>
-        <span class="token operator">:</span><span class="token function">ptr</span><span class="token punctuation">(</span>sp<span class="token punctuation">.</span>_ptr<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> T&gt;
+<span class="hljs-keyword">class</span> weak_ptr
+{
+<span class="hljs-keyword">public</span>:
+    weak_ptr(<span class="hljs-keyword">const</span> <span class="hljs-built_in">shared_ptr</span>&lt;T&gt; sp)
+        :ptr(sp._ptr){}
 
-    <span class="token function">weak_ptr</span><span class="token punctuation">(</span><span class="token keyword">const</span> weak_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> wp<span class="token punctuation">)</span>
-        <span class="token operator">:</span><span class="token function">ptr</span><span class="token punctuation">(</span>wp<span class="token punctuation">.</span>ptr<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    weak_ptr(<span class="hljs-keyword">const</span> weak_ptr&lt;T&gt;&amp; wp)
+        :ptr(wp.ptr){}
 
-    weak_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> weak_ptr<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token operator">&amp;</span> wp<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">!=</span> <span class="token operator">&amp;</span>wp<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            ptr <span class="token operator">=</span> wp<span class="token punctuation">.</span>ptr<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    weak_ptr&lt;T&gt;&amp; <span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> weak_ptr&lt;T&gt;&amp; wp){
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span> != &amp;wp){
+            ptr = wp.ptr;
+        }
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
 
-<span class="token keyword">private</span><span class="token operator">:</span>
-      T<span class="token operator">*</span> ptr<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="hljs-keyword">private</span>:
+      T* ptr;
+};
 </code></pre>
 <h3 id="2-&#x8FED;&#x4EE3;&#x5668;">2. &#x8FED;&#x4EE3;&#x5668;</h3>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">T</span><span class="token operator">&gt;</span>
-<span class="token keyword">struct</span> <span class="token class-name">__list_node</span><span class="token punctuation">{</span>
-    __list_node<span class="token operator">*</span> prev<span class="token punctuation">;</span>
-    __list_node<span class="token operator">*</span> next<span class="token punctuation">;</span>
-    T data<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">struct</span> <span class="token class-name">__list_iterator</span><span class="token punctuation">{</span>
-    refernce <span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">.</span>data<span class="token punctuation">;</span><span class="token punctuation">}</span>
-    pointer <span class="token keyword">operator</span><span class="token operator">-&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token operator">&amp;</span><span class="token punctuation">(</span><span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">class</span> T&gt;
+<span class="hljs-keyword">struct</span> __list_node{
+    __list_node* prev;
+    __list_node* next;
+    T data;
+};
+<span class="hljs-keyword">struct</span> __list_iterator{
+    refernce <span class="hljs-keyword">operator</span>*() <span class="hljs-keyword">const</span>{<span class="hljs-keyword">return</span> (*node).data;}
+    pointer <span class="hljs-keyword">operator</span>-&gt;() <span class="hljs-keyword">const</span>{<span class="hljs-keyword">return</span> &amp;(<span class="hljs-keyword">operator</span>*());}
 
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+};
 </code></pre>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
@@ -1893,7 +1893,7 @@ sp<span class="token operator">-&gt;</span><span class="token function">method</
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"3.9 类似指针的类","level":"1.2.3.9","depth":3,"next":{"title":"4. 函数","level":"1.2.4","depth":2,"path":"1.C++/4.函数/README.md","ref":"1.C++/4.函数/README.md","articles":[{"title":"4.1 函数声明与定义","level":"1.2.4.1","depth":3,"path":"1.C++/4.函数/1.函数声明与定义.md","ref":"1.C++/4.函数/1.函数声明与定义.md","articles":[]},{"title":"4.2 函数参数与返回值","level":"1.2.4.2","depth":3,"path":"1.C++/4.函数/2.函数参数与返回值.md","ref":"1.C++/4.函数/2.函数参数与返回值.md","articles":[]},{"title":"4.3 函数重载","level":"1.2.4.3","depth":3,"path":"1.C++/4.函数/3.函数重载.md","ref":"1.C++/4.函数/3.函数重载.md","articles":[]},{"title":"4.4 转换函数","level":"1.2.4.4","depth":3,"path":"1.C++/4.函数/4.转换函数.md","ref":"1.C++/4.函数/4.转换函数.md","articles":[]},{"title":"4.5 函数对象与lambda表达式","level":"1.2.4.5","depth":3,"path":"1.C++/4.函数/5.函数对象与lambda表达式.md","ref":"1.C++/4.函数/5.函数对象与lambda表达式.md","articles":[]}]},"previous":{"title":"3.8 类的嵌套与组合","level":"1.2.3.8","depth":3,"path":"1.C++/3.类与对象/8.类的嵌套与组合.md","ref":"1.C++/3.类与对象/8.类的嵌套与组合.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/9.类似指针的类.md","mtime":"2020-03-26T15:40:04.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"3.9 类似指针的类","level":"1.2.3.9","depth":3,"next":{"title":"4. 函数","level":"1.2.4","depth":2,"path":"1.C++/4.函数/README.md","ref":"1.C++/4.函数/README.md","articles":[{"title":"4.1 函数声明与定义","level":"1.2.4.1","depth":3,"path":"1.C++/4.函数/1.函数声明与定义.md","ref":"1.C++/4.函数/1.函数声明与定义.md","articles":[]},{"title":"4.2 函数参数与返回值","level":"1.2.4.2","depth":3,"path":"1.C++/4.函数/2.函数参数与返回值.md","ref":"1.C++/4.函数/2.函数参数与返回值.md","articles":[]},{"title":"4.3 函数重载","level":"1.2.4.3","depth":3,"path":"1.C++/4.函数/3.函数重载.md","ref":"1.C++/4.函数/3.函数重载.md","articles":[]},{"title":"4.4 转换函数","level":"1.2.4.4","depth":3,"path":"1.C++/4.函数/4.转换函数.md","ref":"1.C++/4.函数/4.转换函数.md","articles":[]},{"title":"4.5 函数对象与lambda表达式","level":"1.2.4.5","depth":3,"path":"1.C++/4.函数/5.函数对象与lambda表达式.md","ref":"1.C++/4.函数/5.函数对象与lambda表达式.md","articles":[]}]},"previous":{"title":"3.8 类的嵌套与组合","level":"1.2.3.8","depth":3,"path":"1.C++/3.类与对象/8.类的嵌套与组合.md","ref":"1.C++/3.类与对象/8.类的嵌套与组合.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/9.类似指针的类.md","mtime":"2020-03-26T15:40:04.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

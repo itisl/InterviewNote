@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1762,9 +1762,9 @@
 						<hr>
 <h2 id="1-&#x6761;&#x4EF6;&#x7F16;&#x8BD1;">1. &#x6761;&#x4EF6;&#x7F16;&#x8BD1;</h2>
 <p><strong>&#x4F5C;&#x7528;</strong>&#xFF1A;&#x9884;&#x5904;&#x7406;&#x5668;&#x652F;&#x6301;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x7F16;&#x8BD1;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x67D0;&#x4E9B;&#x90E8;&#x5206;&#x3002;&#x8FD9;&#x4E00;&#x884C;&#x4E3A;&#x7531; <code>#if</code>&#x3001;<code>#else</code>&#x3001;<code>#elif</code>&#x3001;<code>#ifdef</code>&#x3001;<code>#ifndef</code> &#x4E0E;<code>#endif</code> &#x6307;&#x4EE4;&#x6240;&#x63A7;&#x5236;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token macro property">#<span class="token directive keyword">ifndef</span> &lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_HPP_</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> &lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_HPP_</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span> </span><span class="token comment">// &lt;PROJECT&gt;/&lt;PATH&gt;/&lt;FILE&gt;.hpp&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#xFF0C;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x5F15;&#x7528;&#x5934;&#x6587;&#x4EF6;</span>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> &lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_HPP_</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> &lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_HPP_</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// &lt;PROJECT&gt;/&lt;PATH&gt;/&lt;FILE&gt;.hpp&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#xFF0C;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x5F15;&#x7528;&#x5934;&#x6587;&#x4EF6;</span></span>
 </code></pre>
 <h2 id="2-include&#x5934;&#x6587;&#x4EF6;">2. <code>include</code>&#x5934;&#x6587;&#x4EF6;</h2>
 <p>// TODO &#x5B8C;&#x6210;
@@ -1778,15 +1778,15 @@
 <blockquote>
 <p>&#x5E94;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x5B8F;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;&#xFF0C;&#x4F7F;&#x7528;&#x5B8F;&#x65F6;&#x8981;&#x975E;&#x5E38;&#x8C28;&#x614E;&#xFF0C;&#x5C3D;&#x91CF;&#x4EE5;&#x5185;&#x8054;&#x51FD;&#x6570;&#x3001;&#x679A;&#x4E3E;&#x548C;&#x5E38;&#x91CF;&#x4EE3;&#x66FF;</p>
 <h4 id="11-&#x7B80;&#x5355;&#x5B8F;&#x5B9A;&#x4E49;">1.1 &#x7B80;&#x5355;&#x5B8F;&#x5B9A;&#x4E49;</h4>
-<pre class="language-"><code class="lang-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> FOREVER for(;;) </span><span class="token comment">//&#x6B7B;&#x5FAA;&#x73AF;</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> CASE break;case</span>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FOREVER for(;;) <span class="hljs-comment">//&#x6B7B;&#x5FAA;&#x73AF;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CASE break;case</span>
 </code></pre>
 <p>&#x5B8F;&#x610F;&#x5473;&#x7740;&#x4F60;&#x548C;&#x7F16;&#x8BD1;&#x5668;&#x770B;&#x5230;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F02;&#x5E38;&#x884C;&#x4E3A;&#xFF0C;&#x5C24;&#x5176;&#x56E0;&#x4E3A;&#x5B8F;&#x5177;&#x6709;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5E94;&#x8BE5;==&#x907F;&#x514D;&#x4F7F;&#x7528;&#x5B8F;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;==:</p>
 </blockquote>
-<pre class="language-"><code class="lang-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> PI 3.14</span>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PI 3.14</span>
 </code></pre>
 <h4 id="12-&#x5E26;&#x53C2;&#x6570;&#x7684;&#x5B8F;&#x5B9A;&#x4E49;">1.2 &#x5E26;&#x53C2;&#x6570;&#x7684;&#x5B8F;&#x5B9A;&#x4E49;</h4>
-<p><code>#define <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x5B8F;&#x540D;</span><span class="token punctuation">&gt;</span></span>(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x53C2;&#x6570;&#x8868;</span><span class="token punctuation">&gt;</span></span>) <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x5B8F;&#x4F53;</span><span class="token punctuation">&gt;</span></span></code></p>
+<p><code>#define &lt;&#x5B8F;&#x540D;&gt;(&lt;&#x53C2;&#x6570;&#x8868;&gt;) &lt;&#x5B8F;&#x4F53;&gt;</code></p>
 <blockquote>
 <p>&#x5B8F;&#x4F53;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5B8F;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
 <ol>
@@ -1795,28 +1795,28 @@
 <li>&#x5168;&#x5C40;&#x540D;&#x5B57;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x4F5C;&#x7528;&#x57DF;&#x89E3;&#x6790;&#x7B26;<code>::</code></li>
 </ol>
 </blockquote>
-<pre class="language-"><code class="lang-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> MIN(a, b) (((a)&lt;(b))?(a):(b))</span>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MIN(a, b) (((a)&lt;(b))?(a):(b))</span>
 </code></pre>
 <h3 id="2-const&#x5E38;&#x91CF;">2. <code>const</code>&#x5E38;&#x91CF;</h3>
 <p>C++&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x4E3A;<code>const</code>&#x5E38;&#x91CF;&#x5206;&#x914D;&#x5730;&#x5740;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x548C;&#x4F5C;&#x7528;&#x57DF;&#x68C0;&#x67E5;</p>
 <h3 id="3-enum-hack">3. <code>enum hack</code></h3>
 <p><strong>&#x4F5C;&#x7528;</strong>&#xFF1A;<code>#define</code>&#x8FDB;&#x884C;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x7A0B;&#x5E8F;&#x8C03;&#x8BD5;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x5BB9;&#x6613;&#x63A7;&#x5236;&#x8303;&#x56F4;&#x3002;&#x4F7F;&#x7528;<code>enum hack</code>&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x5E38;&#x91CF;&#xFF0C;&#x800C;&#x4E14;&#x4E5F;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x3002;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">box</span><span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-  <span class="token keyword">enum</span> <span class="token punctuation">{</span>volume <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token keyword">int</span> things<span class="token punctuation">[</span>volume<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> box{
+<span class="hljs-keyword">private</span>:
+  <span class="hljs-keyword">enum</span> {volume = <span class="hljs-number">10</span>};
+  <span class="hljs-keyword">int</span> things[volume];
+};
 </code></pre>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x5229;&#x7528;enum hack&#x548C;&#x6A21;&#x677F;&#x5143;&#x5B9E;&#x73B0;&#x9012;&#x5F52;&#x7248;&#x672C;&#x7684;&#x9636;&#x4E58;&#x76F4;&#x63A5;&#x6C42;&#x503C;</span>
-<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">unsigned</span> n<span class="token operator">&gt;</span>
-<span class="token keyword">struct</span> <span class="token class-name">Factorial</span><span class="token punctuation">{</span>
-    <span class="token keyword">enum</span> <span class="token punctuation">{</span>value <span class="token operator">=</span> n <span class="token operator">*</span> Factorial<span class="token operator">&lt;</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token operator">&gt;</span><span class="token operator">::</span>value<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span>
-<span class="token keyword">struct</span> <span class="token class-name">Factorial</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
-    <span class="token keyword">enum</span> <span class="token punctuation">{</span>value <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>Factorial<span class="token operator">&lt;</span><span class="token number">10</span><span class="token operator">&gt;</span><span class="token operator">::</span>value<span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x5229;&#x7528;enum hack&#x548C;&#x6A21;&#x677F;&#x5143;&#x5B9E;&#x73B0;&#x9012;&#x5F52;&#x7248;&#x672C;&#x7684;&#x9636;&#x4E58;&#x76F4;&#x63A5;&#x6C42;&#x503C;</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">unsigned</span> n&gt;
+<span class="hljs-keyword">struct</span> Factorial{
+    <span class="hljs-keyword">enum</span> {value = n * Factorial&lt;n<span class="hljs-number">-1</span>&gt;::value};
+};
+<span class="hljs-keyword">template</span>&lt;&gt;
+<span class="hljs-keyword">struct</span> Factorial&lt;<span class="hljs-number">0</span>&gt;{
+    <span class="hljs-keyword">enum</span> {value = <span class="hljs-number">1</span>};
+};
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span>&lt;&lt;Factorial&lt;<span class="hljs-number">10</span>&gt;::value;
 </code></pre>
 <blockquote>
 <ul>
@@ -1870,7 +1870,7 @@ std<span class="token operator">::</span>cout<span class="token operator">&lt;&l
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"1.2 编译预处理","level":"1.2.1.2","depth":3,"next":{"title":"1.3 main函数","level":"1.2.1.3","depth":3,"path":"1.C++/1.编译与链接/3.main函数.md","ref":"1.C++/1.编译与链接/3.main函数.md","articles":[]},"previous":{"title":"1.1 如何运行一个C++程序？","level":"1.2.1.1","depth":3,"path":"1.C++/1.编译与链接/1.从代码到可执行文件.md","ref":"1.C++/1.编译与链接/1.从代码到可执行文件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/1.编译与链接/2.编译预处理.md","mtime":"2020-04-14T07:43:31.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"1.2 编译预处理","level":"1.2.1.2","depth":3,"next":{"title":"1.3 main函数","level":"1.2.1.3","depth":3,"path":"1.C++/1.编译与链接/3.main函数.md","ref":"1.C++/1.编译与链接/3.main函数.md","articles":[]},"previous":{"title":"1.1 如何运行一个C++程序？","level":"1.2.1.1","depth":3,"path":"1.C++/1.编译与链接/1.从代码到可执行文件.md","ref":"1.C++/1.编译与链接/1.从代码到可执行文件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/1.编译与链接/2.编译预处理.md","mtime":"2020-04-14T07:43:31.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

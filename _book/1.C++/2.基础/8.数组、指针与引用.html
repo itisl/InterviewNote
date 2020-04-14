@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1769,25 +1769,25 @@
 <li>&#x6307;&#x9488;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x5728;32&#x4E3A;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E3A;4&#x4E2A;&#x5B57;&#x8282;&#xFF0C;64&#x4F4D;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E3A;8&#x4E2A;&#x5B57;&#x8282;</li>
 <li>&#x6307;&#x9488;&#x7684;&#x7C7B;&#x578B;&#x51B3;&#x5B9A;&#x4E86;&#x6307;&#x9488;&#x8FD0;&#x7B97;&#x7684;&#x5185;&#x5B58;&#x504F;&#x79FB;&#x91CF;(&#x5305;&#x62EC;<code>*</code>, <code>+</code>, <code>-</code>, <code>++</code>, <code>--</code>)</li>
 <li>&#x6307;&#x9488;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x4E0E;&#x6240;&#x6307;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#x3002;&#x4E24;&#x4E2A;&#x4F8B;&#x5916;&#xFF1A;<ol>
-<li>&#x53EF;&#x4EE5;&#x7528;&#x6307;&#x5411;&#x5E38;&#x91CF;&#x7684;&#x6307;&#x9488;&#x6307;&#x5411;&#x975E;&#x5E38;&#x91CF;&#x5BF9;&#x8C61;<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>n<span class="token punctuation">;</span><span class="token comment">//n&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x6307;&#x9488;*p&#x4FEE;&#x6539;</span>
+<li>&#x53EF;&#x4EE5;&#x7528;&#x6307;&#x5411;&#x5E38;&#x91CF;&#x7684;&#x6307;&#x9488;&#x6307;&#x5411;&#x975E;&#x5E38;&#x91CF;&#x5BF9;&#x8C61;<pre><code class="lang-cpp"><span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *p = &amp;n;<span class="hljs-comment">//n&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x6307;&#x9488;*p&#x4FEE;&#x6539;</span>
 </code></pre>
 </li>
 <li>&#x7C7B;&#x7684;&#x591A;&#x6001;<h4 id="&#x7A7A;&#x6307;&#x9488;nullptr&#x4E0E;null&#x548C;0">&#x7A7A;&#x6307;&#x9488;<code>nullptr</code>&#x4E0E;<code>NULL</code>&#x548C;<code>0</code></h4>
-<code>nullptr</code>&#x662F;C++11&#x6807;&#x51C6;&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x6307;&#x9488;&#x6307;&#x5411;<code>nullptr</code>&#x4EE3;&#x8868;&#x6307;&#x9488;&#x4E3A;&#x7A7A;<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x8C03;&#x7528;f(int)</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5B9E;&#x9645;&#x8C03;&#x7528;f(int)&#xFF0C;&#x4E0E;&#x76EE;&#x6807;&#x8C03;&#x7528;&#x4E0D;&#x7B26;</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x8C03;&#x7528;f(void*)</span>
+<code>nullptr</code>&#x662F;C++11&#x6807;&#x51C6;&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x6307;&#x9488;&#x6307;&#x5411;<code>nullptr</code>&#x4EE3;&#x8868;&#x6307;&#x9488;&#x4E3A;&#x7A7A;<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">void</span>*)</span></span>;
+f(<span class="hljs-number">0</span>); <span class="hljs-comment">// &#x8C03;&#x7528;f(int)</span>
+f(<span class="hljs-literal">NULL</span>); <span class="hljs-comment">// &#x5B9E;&#x9645;&#x8C03;&#x7528;f(int)&#xFF0C;&#x4E0E;&#x76EE;&#x6807;&#x8C03;&#x7528;&#x4E0D;&#x7B26;</span>
+f(<span class="hljs-literal">nullptr</span>); <span class="hljs-comment">// &#x8C03;&#x7528;f(void*)</span>
 </code></pre>
 <h3 id="21-&#x6307;&#x9488;&#x4E0E;&#x6570;&#x7EC4;">2.1 &#x6307;&#x9488;&#x4E0E;&#x6570;&#x7EC4;</h3>
 <h3 id="22-&#x6307;&#x9488;&#x4E0E;const">2.2 &#x6307;&#x9488;&#x4E0E;<code>const</code></h3>
 <h4 id="&#x9876;&#x5C42;const&#xFF1A;&#x5E38;&#x91CF;&#x6307;&#x9488;">&#x9876;&#x5C42;<code>const</code>&#xFF1A;&#x5E38;&#x91CF;&#x6307;&#x9488;</h4>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>n<span class="token punctuation">;</span> <span class="token comment">//p&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#xFF0C;*p&#x548C;n&#x53EF;&#x4EE5;&#x6539;&#x53D8;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p = &amp;n; <span class="hljs-comment">//p&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#xFF0C;*p&#x548C;n&#x53EF;&#x4EE5;&#x6539;&#x53D8;</span>
 </code></pre>
 <h4 id="&#x5E95;&#x5C42;const&#xFF1A;&#x6307;&#x5411;&#x5E38;&#x91CF;&#x7684;&#x6307;&#x9488;">&#x5E95;&#x5C42;<code>const</code>&#xFF1A;&#x6307;&#x5411;&#x5E38;&#x91CF;&#x7684;&#x6307;&#x9488;</h4>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>n<span class="token punctuation">;</span> <span class="token comment">//p&#x548C;n&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;*p&#x6539;&#x53D8;n</span>
-<span class="token keyword">int</span> <span class="token keyword">const</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>n<span class="token punctuation">;</span> <span class="token comment">//&#x610F;&#x4E49;&#x76F8;&#x540C;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *p = &amp;n; <span class="hljs-comment">//p&#x548C;n&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;*p&#x6539;&#x53D8;n</span>
+<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> *p = &amp;n; <span class="hljs-comment">//&#x610F;&#x4E49;&#x76F8;&#x540C;</span>
 </code></pre>
 </li>
 </ol>
@@ -1810,45 +1810,45 @@
 <li>&#x4F7F;&#x7528;&#x5F15;&#x7528;/&#x6307;&#x9488;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x6216;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x5185;&#x5B58;&#x8F83;&#x5C0F;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x7684;&#x6548;&#x7387;&#x3002;</li>
 <li>&#x5982;&#x679C;&#x4E0D;&#x5E0C;&#x671B;&#x901A;&#x8FC7;&#x5F15;&#x7528;&#x6765;&#x4FEE;&#x6539;&#x539F;&#x59CB;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x65F6;&#x7528;<code>const</code>&#x9650;&#x5236;</li>
 <li>&#x5F15;&#x7528;&#x672C;&#x8EAB;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x5B58;&#x5728; void &#x7684;&#x5F15;&#x7528;&#xFF0C;&#x4E5F;&#x4E0D;&#x5B58;&#x5728;&#x5F15;&#x7528;&#x7684;&#x5F15;&#x7528;&#x4E0D;&#x80FD;&#x5B9A;&#x4E49;&#x5F15;&#x7528;</li>
-<li>&#x5E38;&#x91CF;&#x5DE6;&#x503C;&#x5F15;&#x7528;(&#x5982;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E2D;<code>const int&amp;</code>)&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;&#x5230;&#x4E34;&#x65F6;&#x91CF;(&#x53F3;&#x503C;)<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span> <span class="token operator">&amp;</span>name <span class="token operator">=</span> data<span class="token punctuation">;</span>
+<li>&#x5E38;&#x91CF;&#x5DE6;&#x503C;&#x5F15;&#x7528;(&#x5982;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E2D;<code>const int&amp;</code>)&#x53EF;&#x4EE5;&#x7ED1;&#x5B9A;&#x5230;&#x4E34;&#x65F6;&#x91CF;(&#x53F3;&#x503C;)<pre><code class="lang-cpp"><span class="hljs-keyword">int</span> &amp;name = data;
 </code></pre>
 </li>
 </ol>
 </blockquote>
 <h4 id="&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;">&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;</h4>
 <p>&#x5F15;&#x7528;&#x4F20;&#x53C2;&#x53EF;&#x4EE5;&#x4F20;&#x5730;&#x5740;&#xFF0C;&#x5F62;&#x5F0F;&#x4E0A;&#x6BD4;&#x6307;&#x9488;&#x66F4;&#x52A0;&#x4F18;&#x7F8E;&#x76F4;&#x89C2;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">&amp;</span> a<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">&amp;</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> temp <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    a <span class="token operator">=</span> b<span class="token punctuation">;</span>
-    b <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>&amp; a,<span class="hljs-keyword">int</span>&amp; b)</span></span>{
+    <span class="hljs-keyword">int</span> temp = a;
+    a = b;
+    b = temp;
+}
 </code></pre>
 <h4 id="&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;">&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;</h4>
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x53EF;&#x8FD4;&#x56DE;&#x5C40;&#x90E8;&#x6570;&#x636E;&#x7684;&#x5F15;&#x7528;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span><span class="token operator">&amp;</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    n <span class="token operator">+=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> n<span class="token punctuation">;</span><span class="token comment">//&#x4E0D;&#x9700;&#x8981;&amp;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span>&amp; <span class="hljs-title">plus</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;n)</span></span>{
+    n += <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">return</span> n;<span class="hljs-comment">//&#x4E0D;&#x9700;&#x8981;&amp;</span>
+};
 </code></pre>
 <h4 id="&#x6307;&#x9488;&#x7684;&#x5F15;&#x7528;">&#x6307;&#x9488;&#x7684;&#x5F15;&#x7528;</h4>
 <p>&#x79BB;&#x53D8;&#x91CF;&#x540D;&#x6700;&#x8FD1;&#x7684;&#x7B26;&#x53F7;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x786E;&#x5B9A;&#x5F15;&#x7528;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x9605;&#x8BFB;&#xFF09;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span><span class="token operator">*</span><span class="token operator">&amp;</span> pnum <span class="token operator">=</span> p<span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">int</span>*&amp; pnum = p;
 </code></pre>
 <h3 id="32-&#x53F3;&#x503C;&#x5F15;&#x7528;">3.2 &#x53F3;&#x503C;&#x5F15;&#x7528;<code>&amp;&amp;</code></h3>
 <p><strong>&#x4F5C;&#x7528;</strong>&#xFF1A;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x4E3A;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;(&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x672A;&#x547D;&#x540D;&#x7684;&#x81EA;&#x7531;&#x7A7A;&#x95F4;&#x7B49;)&#xFF0C;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x4E3A;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5EC9;&#x4EF7;&#x7684;&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#x4EE3;&#x66FF;&#x62F7;&#x8D1D;&#x64CD;&#x4F5C;</p>
 <blockquote>
 <ul>
 <li>&#x53F3;&#x503C;&#x5F15;&#x7528;&#x53EF;&#x7528;&#x4E8E;&#x4E3A;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x5EF6;&#x957F;&#x751F;&#x5B58;&#x671F;</li>
-<li>&#x5F53;&#x51FD;&#x6570;&#x540C;&#x65F6;&#x5177;&#x6709;&#x53F3;&#x503C;&#x5F15;&#x7528;&#x548C;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x7684;&#x91CD;&#x8F7D;&#x65F6;&#xFF0C;&#x53F3;&#x503C;&#x5F15;&#x7528;&#x91CD;&#x8F7D;&#x7ED1;&#x5B9A;&#x5230;&#x53F3;&#x503C;&#xFF08;&#x5305;&#x542B;&#x7EAF;&#x53F3;&#x503C;&#x548C;&#x4EA1;&#x503C;&#xFF09;&#xFF0C;&#x800C;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x91CD;&#x8F7D;&#x7ED1;&#x5B9A;&#x5230;&#x5DE6;&#x503C;<pre class="language-"><code class="lang-cpp">T<span class="token operator">&amp;&amp;</span> rr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-T<span class="token operator">&amp;&amp;</span> rr <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<li>&#x5F53;&#x51FD;&#x6570;&#x540C;&#x65F6;&#x5177;&#x6709;&#x53F3;&#x503C;&#x5F15;&#x7528;&#x548C;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x7684;&#x91CD;&#x8F7D;&#x65F6;&#xFF0C;&#x53F3;&#x503C;&#x5F15;&#x7528;&#x91CD;&#x8F7D;&#x7ED1;&#x5B9A;&#x5230;&#x53F3;&#x503C;&#xFF08;&#x5305;&#x542B;&#x7EAF;&#x53F3;&#x503C;&#x548C;&#x4EA1;&#x503C;&#xFF09;&#xFF0C;&#x800C;&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x91CD;&#x8F7D;&#x7ED1;&#x5B9A;&#x5230;&#x5DE6;&#x503C;<pre><code class="lang-cpp">T&amp;&amp; rr = <span class="hljs-number">1</span>;
+T&amp;&amp; rr = a + b;
 </code></pre>
 <strong>&#x5DE6;&#x503C;&#x5F15;&#x7528;&#x4E0E;&#x53F3;&#x503C;&#x5F15;&#x7528;&#x7684;&#x8F6C;&#x6362;</strong></li>
-<li>&#x5C06;&#x5DE6;&#x503C;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x53F3;&#x503C;<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;static_cast&lt;T&amp;&amp;&gt;()</span>
-std<span class="token operator">::</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<li>&#x5C06;&#x5DE6;&#x503C;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E3A;&#x53F3;&#x503C;<pre><code class="lang-cpp"><span class="hljs-comment">// &#x7B49;&#x4EF7;&#x4E8E;static_cast&lt;T&amp;&amp;&gt;()</span>
+<span class="hljs-built_in">std</span>::move()
 </code></pre>
 </li>
-<li>&#x5C06;&#x53F3;&#x503C;&#x8F6C;&#x6362;&#x6210;&#x5DE6;&#x503C;<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x7B49;&#x4EF7;&#x4E8E;static_cast&lt;T&amp;&gt;()</span>
-std<span class="token operator">::</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<li>&#x5C06;&#x53F3;&#x503C;&#x8F6C;&#x6362;&#x6210;&#x5DE6;&#x503C;<pre><code class="lang-cpp"><span class="hljs-comment">// &#x7B49;&#x4EF7;&#x4E8E;static_cast&lt;T&amp;&gt;()</span>
+<span class="hljs-built_in">std</span>::forward()
 </code></pre>
 </li>
 </ul>
@@ -1895,7 +1895,7 @@ std<span class="token operator">::</span><span class="token function">forward</s
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"2.8 数组、指针与引用","level":"1.2.2.8","depth":3,"next":{"title":"2.9 C++常用关键字","level":"1.2.2.9","depth":3,"path":"1.C++/2.基础/9.C++关键字.md","ref":"1.C++/2.基础/9.C++关键字.md","articles":[]},"previous":{"title":"2.7 输入输出","level":"1.2.2.7","depth":3,"path":"1.C++/2.基础/7.输入输出.md","ref":"1.C++/2.基础/7.输入输出.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/2.基础/8.数组、指针与引用.md","mtime":"2020-04-14T05:17:30.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"2.8 数组、指针与引用","level":"1.2.2.8","depth":3,"next":{"title":"2.9 C++常用关键字","level":"1.2.2.9","depth":3,"path":"1.C++/2.基础/9.C++关键字.md","ref":"1.C++/2.基础/9.C++关键字.md","articles":[]},"previous":{"title":"2.7 输入输出","level":"1.2.2.7","depth":3,"path":"1.C++/2.基础/7.输入输出.md","ref":"1.C++/2.基础/7.输入输出.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/2.基础/8.数组、指针与引用.md","mtime":"2020-04-14T05:17:30.474Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

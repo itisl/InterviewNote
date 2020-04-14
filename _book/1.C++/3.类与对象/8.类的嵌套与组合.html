@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1761,13 +1761,13 @@
 						
 						<h2 id="&#x5D4C;&#x5957;&#x7C7B;">&#x5D4C;&#x5957;&#x7C7B;</h2>
 <p><strong>&#x5D4C;&#x5957;&#x7C7B;(nested class)</strong>&#xFF1A;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x5D4C;&#x5957;&#x58F0;&#x660E;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x6210;&#x5458;&#x7C7B;(member class)</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">Tree</span><span class="token punctuation">{</span> 
-    <span class="token comment">//&#x5728;Tree&#x7684;&#x5185;&#x90E8;&#x58F0;&#x660E;Node&#x7C7B;</span>
-    <span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">{</span>
-        Node <span class="token operator">*</span>right<span class="token punctuation">;</span>
-        Node <span class="token operator">*</span>left<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Tree{ 
+    <span class="hljs-comment">//&#x5728;Tree&#x7684;&#x5185;&#x90E8;&#x58F0;&#x660E;Node&#x7C7B;</span>
+    <span class="hljs-keyword">class</span> Node{
+        Node *right;
+        Node *left;
+    }
+}
 </code></pre>
 <blockquote>
 <ul>
@@ -1778,20 +1778,20 @@
 </blockquote>
 <h2 id="&#x7C7B;&#x7684;&#x7EC4;&#x5408;">&#x7C7B;&#x7684;&#x7EC4;&#x5408;</h2>
 <p><strong>&#x7C7B;&#x7EC4;&#x5408;</strong>&#xFF1A;&#x7C7B;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;&#x66F4;&#x590D;&#x6742;&#x7684;&#x62BD;&#x8C61;&#x3002;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span>A a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    A a2<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> A{
+    ...
+};
+<span class="hljs-keyword">class</span> B{
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span><span class="hljs-params">(A a)</span></span>;
+    A a2;
+};
 </code></pre>
 <h3 id="&#x7C7B;&#x7EC4;&#x5408;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;">&#x7C7B;&#x7EC4;&#x5408;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</h3>
 <ol>
-<li>&#x7EC4;&#x5408;&#x7C7B;&#x4E0D;&#x4EC5;&#x8981;&#x5BF9;&#x672C;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x6570;&#x636E;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E5F;&#x8981;&#x5BF9;&#x5BF9;&#x8C61;&#x6210;&#x5458;&#x521D;&#x59CB;&#x5316;&#x3002;&#x521D;&#x59CB;&#x5316;&#x6B21;&#x5E8F;&#x662F;&#x6210;&#x5458;&#x5728;&#x7C7B;&#x4F53;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6B21;&#x5E8F;&#xFF1A;<pre class="language-"><code class="lang-cpp"> Clock<span class="token operator">::</span><span class="token function">Clock</span><span class="token punctuation">(</span>&#x5BF9;&#x8C61;&#x6210;&#x5458;&#x5F62;&#x53C2;&#xFF0C;&#x672C;&#x7C7B;&#x6210;&#x5458;&#x5F62;&#x53C2;<span class="token punctuation">)</span><span class="token operator">:</span>&#x5BF9;&#x8C61;<span class="token number">1</span><span class="token punctuation">(</span>&#x53C2;&#x6570;<span class="token punctuation">)</span>&#xFF0C;&#x5BF9;&#x8C61;<span class="token number">2</span><span class="token punctuation">(</span>&#x53C2;&#x6570;<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">{</span>
-     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
- <span class="token punctuation">}</span>
+<li>&#x7EC4;&#x5408;&#x7C7B;&#x4E0D;&#x4EC5;&#x8981;&#x5BF9;&#x672C;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x6570;&#x636E;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E5F;&#x8981;&#x5BF9;&#x5BF9;&#x8C61;&#x6210;&#x5458;&#x521D;&#x59CB;&#x5316;&#x3002;&#x521D;&#x59CB;&#x5316;&#x6B21;&#x5E8F;&#x662F;&#x6210;&#x5458;&#x5728;&#x7C7B;&#x4F53;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6B21;&#x5E8F;&#xFF1A;<pre><code class="lang-cpp"> Clock::Clock(&#x5BF9;&#x8C61;&#x6210;&#x5458;&#x5F62;&#x53C2;&#xFF0C;&#x672C;&#x7C7B;&#x6210;&#x5458;&#x5F62;&#x53C2;):&#x5BF9;&#x8C61;<span class="hljs-number">1</span>(&#x53C2;&#x6570;)&#xFF0C;&#x5BF9;&#x8C61;<span class="hljs-number">2</span>(&#x53C2;&#x6570;), ...{
+     ...
+ }
 </code></pre>
 </li>
 <li>&#x90E8;&#x4EF6;&#x7C7B;&#x6700;&#x597D;&#x6709;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x90E8;&#x4EF6;&#x7C7B;&#x8981;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;<h3 id="&#x524D;&#x5411;&#x5F15;&#x7528;&#x58F0;&#x660E;">&#x524D;&#x5411;&#x5F15;&#x7528;&#x58F0;&#x660E;</h3>
@@ -1859,7 +1859,7 @@ public:
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"3.8 类的嵌套与组合","level":"1.2.3.8","depth":3,"next":{"title":"3.9 类似指针的类","level":"1.2.3.9","depth":3,"path":"1.C++/3.类与对象/9.类似指针的类.md","ref":"1.C++/3.类与对象/9.类似指针的类.md","articles":[]},"previous":{"title":"3.7 虚函数与多态","level":"1.2.3.7","depth":3,"path":"1.C++/3.类与对象/7.虚函数与多态.md","ref":"1.C++/3.类与对象/7.虚函数与多态.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/8.类的嵌套与组合.md","mtime":"2020-03-23T04:58:41.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"3.8 类的嵌套与组合","level":"1.2.3.8","depth":3,"next":{"title":"3.9 类似指针的类","level":"1.2.3.9","depth":3,"path":"1.C++/3.类与对象/9.类似指针的类.md","ref":"1.C++/3.类与对象/9.类似指针的类.md","articles":[]},"previous":{"title":"3.7 虚函数与多态","level":"1.2.3.7","depth":3,"path":"1.C++/3.类与对象/7.虚函数与多态.md","ref":"1.C++/3.类与对象/7.虚函数与多态.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/8.类的嵌套与组合.md","mtime":"2020-03-23T04:58:41.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

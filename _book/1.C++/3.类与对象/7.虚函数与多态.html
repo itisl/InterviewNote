@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1764,7 +1764,7 @@
 <p><strong>&#x865A;&#x51FD;&#x6570;</strong>&#x662F;&#x53EF;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x8986;&#x76D6;&#x5176;&#x884C;&#x4E3A;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x3002;&#x4E0E;&#x975E;&#x865A;&#x51FD;&#x6570;&#x76F8;&#x53CD;&#xFF0C;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x5173;&#x4E8E;&#x8BE5;&#x7C7B;&#x5B9E;&#x9645;&#x7C7B;&#x578B;&#x7684;&#x7F16;&#x8BD1;&#x65F6;&#x4FE1;&#x606F;&#xFF0C;&#x4ECD;&#x7136;&#x4FDD;&#x7559;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x884C;&#x4E3A;&#x3002;==&#x865A;&#x51FD;&#x6570;&#x7684;&#x552F;&#x4E00;&#x7528;&#x9014;&#x5C31;&#x662F;&#x6784;&#x6210;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x591A;&#x6001;&#x3002;==</p>
 <blockquote>
 <p><a href="../4.&#x51FD;&#x6570;/3.&#x51FD;&#x6570;&#x91CD;&#x8F7D;.html">&#x91CD;&#x8F7D;&#x548C;&#x8986;&#x76D6;&#x7684;&#x533A;&#x522B;</a></p>
-<pre class="language-"><code class="lang-cpp">&#x58F0;&#x660E;&#x7B26; &#x865A;&#x8BF4;&#x660E;&#x7B26;&#x5E8F;&#x5217;<span class="token punctuation">(</span>&#x53EF;&#x9009;<span class="token punctuation">)</span> &#x7EAF;&#x8BF4;&#x660E;&#x7B26;<span class="token punctuation">(</span>&#x53EF;&#x9009;<span class="token punctuation">)</span>
+<pre><code class="lang-cpp">&#x58F0;&#x660E;&#x7B26; &#x865A;&#x8BF4;&#x660E;&#x7B26;&#x5E8F;&#x5217;(&#x53EF;&#x9009;) &#x7EAF;&#x8BF4;&#x660E;&#x7B26;(&#x53EF;&#x9009;)
 </code></pre>
 <p>&#x865A;&#x8BF4;&#x660E;&#x7B26;&#x5E8F;&#x5217;&#xFF0C;&#x5FC5;&#x987B;&#x662F; <code>override</code>&#x3001;<code>final</code>&#x3001;<code>final override</code> &#x6216; <code>override final</code>&#x4E4B;&#x4E00;</p>
 <ol>
@@ -1775,43 +1775,43 @@
 </blockquote>
 <h3 id="11-&#x666E;&#x901A;&#x865A;&#x51FD;&#x6570;">1.1 &#x666E;&#x901A;&#x865A;&#x51FD;&#x6570;</h3>
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x57FA;&#x7C7B;&#x7684;&#x6790;&#x6784;&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x4E3A;<code>virtual</code>&#xFF0C;&#x5426;&#x5219;&#x4F7F;&#x7528;&#x57FA;&#x7C7B;&#x6307;&#x9488;&#x6307;&#x5411;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x53EA;&#x6790;&#x6784;&#x57FA;&#x7C7B;&#x90E8;&#x5206;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x865A;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token operator">:</span><span class="token keyword">public</span> A<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> A{
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">virtual</span> ~A();<span class="hljs-comment">//&#x865A;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;</span>
+    ...
+};
+<span class="hljs-keyword">class</span> B:<span class="hljs-keyword">public</span> A{
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">virtual</span> ~B();
+    ...
+};
 </code></pre>
 <h3 id="12-&#x7EAF;&#x865A;&#x51FD;&#x6570;">1.2 &#x7EAF;&#x865A;&#x51FD;&#x6570;</h3>
 <ol>
-<li>&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;:<pre class="language-"><code class="lang-cpp"><span class="token keyword">virtual</span> type <span class="token function">FunName</span><span class="token punctuation">(</span>para_list<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//&#x5728;&#x7ED3;&#x5C3E;&#x52A0;&#x4E0A;=0&#x544A;&#x8BC9;&#x7F16;&#x8BD1;&#x5668;&#x8FD9;&#x662F;&#x7EAF;&#x865A;&#x51FD;&#x6570;</span>
+<li>&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;:<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">virtual</span> type <span class="hljs-title">FunName</span><span class="hljs-params">(para_list)</span> </span>= <span class="hljs-number">0</span>; <span class="hljs-comment">//&#x5728;&#x7ED3;&#x5C3E;&#x52A0;&#x4E0A;=0&#x544A;&#x8BC9;&#x7F16;&#x8BD1;&#x5668;&#x8FD9;&#x662F;&#x7EAF;&#x865A;&#x51FD;&#x6570;</span>
 </code></pre>
 &#x53EA;&#x6709;&#x7C7B;&#x4E2D;&#x7684;&#x865A;&#x51FD;&#x6570;&#x624D;&#x80FD;&#x88AB;&#x58F0;&#x660E;&#x4E3A;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x666E;&#x901A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x548C;&#x9876;&#x5C42;&#x51FD;&#x6570;&#x5747;&#x4E0D;&#x80FD;&#x58F0;&#x660E;&#x4E3A;&#x7EAF;&#x865A;&#x51FD;&#x6570;</li>
 <li>&#x62BD;&#x8C61;&#x7C7B;&#xFF08;Abstract Class&#xFF09;&#xFF1A;&#x5305;&#x542B;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x6210;&#x4E3A;&#x62BD;&#x8C61;&#x7C7B;&#x3002;<blockquote>
 <p>&#x4E00;&#x4E2A;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7C7B;&#x6210;&#x4E3A;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;&#x4E2D;&#x9664;&#x4E86;&#x5305;&#x542B;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5176;&#x5B83;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF08;&#x865A;&#x51FD;&#x6570;&#x6216;&#x666E;&#x901A;&#x51FD;&#x6570;&#xFF09;&#x548C;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x51FD;&#x6570;&#x4F53;&#xFF0C;&#x56E0;&#x6B64;&#x62BD;&#x8C61;&#x7C7B;&#x65E0;&#x6CD5;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;(&#x901A;&#x5E38;&#x6CA1;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;)</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">Line</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
- <span class="token function">Line</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
- <span class="token keyword">virtual</span> <span class="token keyword">float</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//&#x58F0;&#x660E;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x865A;&#x51FD;&#x6570;</span>
-<span class="token keyword">protected</span><span class="token operator">:</span>
- <span class="token keyword">float</span> m_len<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">Cube</span><span class="token operator">:</span><span class="token keyword">public</span> Line<span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
- <span class="token function">Cube</span><span class="token punctuation">(</span><span class="token keyword">float</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">float</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-Cube<span class="token operator">::</span><span class="token function">Cube</span><span class="token punctuation">(</span><span class="token keyword">float</span> len<span class="token punctuation">)</span><span class="token operator">:</span><span class="token function">Line</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token comment">//&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;</span>
-<span class="token keyword">float</span> Cube<span class="token operator">::</span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
- <span class="token keyword">return</span> m_len<span class="token operator">*</span>m_len<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">class</span> <span class="hljs-title">Line</span><span class="hljs-params">()</span></span>{
+<span class="hljs-keyword">public</span>:
+ Line();<span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+ <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">float</span> <span class="hljs-title">area</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">0</span>;<span class="hljs-comment">//&#x58F0;&#x660E;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x865A;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">protected</span>:
+ <span class="hljs-keyword">float</span> m_len;
+};
+<span class="hljs-keyword">class</span> Cube:<span class="hljs-keyword">public</span> Line{
+<span class="hljs-keyword">public</span>:
+ Cube(<span class="hljs-keyword">float</span> len);
+ <span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">area</span><span class="hljs-params">()</span></span>;<span class="hljs-comment">//&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;</span>
+};
+Cube::Cube(<span class="hljs-keyword">float</span> len):Line(len){}
+<span class="hljs-comment">//&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;</span>
+<span class="hljs-keyword">float</span> Cube::area(){
+ <span class="hljs-keyword">return</span> m_len*m_len;
+}
 main&#x4E2D;&#xFF1A;
-Line <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Cube</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x6001;</span>
+Line *p = <span class="hljs-keyword">new</span> Cube(<span class="hljs-number">5</span>);<span class="hljs-comment">//&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x6001;</span>
 </code></pre>
 </blockquote>
 </li>
@@ -1895,7 +1895,7 @@ Line <span class="token operator">*</span>p <span class="token operator">=</span
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"3.7 虚函数与多态","level":"1.2.3.7","depth":3,"next":{"title":"3.8 类的嵌套与组合","level":"1.2.3.8","depth":3,"path":"1.C++/3.类与对象/8.类的嵌套与组合.md","ref":"1.C++/3.类与对象/8.类的嵌套与组合.md","articles":[]},"previous":{"title":"3.6 继承与派生","level":"1.2.3.6","depth":3,"path":"1.C++/3.类与对象/6.继承与派生.md","ref":"1.C++/3.类与对象/6.继承与派生.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/7.虚函数与多态.md","mtime":"2020-04-14T07:07:51.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"3.7 虚函数与多态","level":"1.2.3.7","depth":3,"next":{"title":"3.8 类的嵌套与组合","level":"1.2.3.8","depth":3,"path":"1.C++/3.类与对象/8.类的嵌套与组合.md","ref":"1.C++/3.类与对象/8.类的嵌套与组合.md","articles":[]},"previous":{"title":"3.6 继承与派生","level":"1.2.3.6","depth":3,"path":"1.C++/3.类与对象/6.继承与派生.md","ref":"1.C++/3.类与对象/6.继承与派生.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/7.虚函数与多态.md","mtime":"2020-04-14T07:07:51.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1764,54 +1764,54 @@
 <p>&#x8F6C;&#x6362;&#x51FD;&#x6570;(conversion function)&#xFF1A;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x76EE;&#x6807;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x7CFB;&#x7EDF;&#x9884;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</p>
 </blockquote>
 <p>==&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x540C;&#x4E8E;&#x5176;&#x4ED6;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#xFF0C;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x5728;&#x5176;&#x64CD;&#x4F5C;&#x7B26;&#x4E2D;==</p>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</span>
-<span class="token keyword">operator</span> <span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">type</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>{
+    <span class="hljs-keyword">return</span> type();
+}
 </code></pre>
 <p>&#x793A;&#x4F8B;&#xFF1A;&#x81EA;&#x5B9A;&#x4E49;&#x5206;&#x6570;&#x7C7B;&#x8F6C;&#x6362;&#x6210;<code>double</code>&#x7C7B;&#x578B;</p>
 <blockquote>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">Fraction</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> numerator_<span class="token punctuation">;</span> <span class="token comment">// &#x5206;&#x5B50;</span>
-    <span class="token keyword">int</span> denomirator_<span class="token punctuation">;</span> <span class="token comment">// &#x5206;&#x6BCD;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token function">Fraction</span><span class="token punctuation">(</span><span class="token keyword">int</span> numerator<span class="token punctuation">,</span> <span class="token keyword">int</span> denomirator<span class="token punctuation">)</span>
-    <span class="token operator">:</span><span class="token function">numerator_</span><span class="token punctuation">(</span>numerator<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">denomirator_</span><span class="token punctuation">(</span>denomirator<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token comment">// &#x8F6C;&#x6362;&#x51FD;&#x6570;</span>
-    <span class="token keyword">operator</span> <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">*</span>numerator_ <span class="token operator">/</span> denomirator_<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Fraction
+{
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">int</span> numerator_; <span class="hljs-comment">// &#x5206;&#x5B50;</span>
+    <span class="hljs-keyword">int</span> denomirator_; <span class="hljs-comment">// &#x5206;&#x6BCD;</span>
+<span class="hljs-keyword">public</span>:
+    Fraction(<span class="hljs-keyword">int</span> numerator, <span class="hljs-keyword">int</span> denomirator)
+    :numerator_(numerator), denomirator_(denomirator){ };
+    <span class="hljs-comment">// &#x8F6C;&#x6362;&#x51FD;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">double</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">double</span>(<span class="hljs-number">1.0</span>*numerator_ / denomirator_);
+    }
+};
 </code></pre>
 <p>&#x8C03;&#x7528;<code>double</code>&#x65F6;&#xFF0C;&#x4F1A;&#x6267;&#x884C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</p>
-<pre class="language-"><code class="lang-cpp">Fraction <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">double</span> d <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">+</span> f<span class="token punctuation">;</span> <span class="token comment">//&#x8C03;&#x7528;operator double()&#x5C06;f=3/5&#x8F6C;&#x6362;&#x4E3A;0.6</span>
+<pre><code class="lang-cpp"><span class="hljs-function">Fraction <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)</span></span>;
+<span class="hljs-keyword">double</span> d = <span class="hljs-number">4</span> + f; <span class="hljs-comment">//&#x8C03;&#x7528;operator double()&#x5C06;f=3/5&#x8F6C;&#x6362;&#x4E3A;0.6</span>
 </code></pre>
 <h3 id="&#x975E;explicit&#x5355;&#x53C2;&#x6570;&#x6784;&#x9020;&#x51FD;&#x6570;">&#x975E;<code>explicit</code>&#x5355;&#x53C2;&#x6570;&#x6784;&#x9020;&#x51FD;&#x6570;</h3>
 <p>&#x5F53;&#x8F6C;&#x6362;&#x51FD;&#x6570;&#x548C;&#x975E;<code>explicit</code>&#x5355;&#x53C2;&#x6570;&#x6784;&#x9020;&#x51FD;&#x6570;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E8C;&#x4E49;&#x6027;&#x9020;&#x6210;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;</p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">Fraction</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> numerator_<span class="token punctuation">;</span> <span class="token comment">// &#x5206;&#x5B50;</span>
-    <span class="token keyword">int</span> denomirator_<span class="token punctuation">;</span> <span class="token comment">// &#x5206;&#x6BCD;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment">// &#x52A0;&#x4E0A;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#xFF0C;&#x6784;&#x6210;&#x5355;&#x53C2;&#x6570;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
-    <span class="token function">Fraction</span><span class="token punctuation">(</span><span class="token keyword">int</span> numerator<span class="token punctuation">,</span> <span class="token keyword">int</span> denomirator<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token operator">:</span><span class="token function">numerator_</span><span class="token punctuation">(</span>numerator<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">denomirator_</span><span class="token punctuation">(</span>denomirator<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">operator</span> <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">double</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">*</span>numerator_ <span class="token operator">/</span> denomirator_<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    Fraction <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">Fraction</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment">//in main()</span>
-Fraction <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// &#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x77E5;&#x9053;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5C06;4&#x8F6C;&#x6362;&#x4E3A;F(4,1), &#x7136;&#x540E;&#x8C03;&#x7528;operator+</span>
-<span class="token comment">// &#x8FD8;&#x662F;Fraction d2 = 4.6&#xFF0C;&#x4EA7;&#x751F;&#x4E8C;&#x4E49;&#x6027;</span>
-Fraction d2 <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">+</span> f<span class="token punctuation">;</span>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Fraction
+{
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">int</span> numerator_; <span class="hljs-comment">// &#x5206;&#x5B50;</span>
+    <span class="hljs-keyword">int</span> denomirator_; <span class="hljs-comment">// &#x5206;&#x6BCD;</span>
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-comment">// &#x52A0;&#x4E0A;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#xFF0C;&#x6784;&#x6210;&#x5355;&#x53C2;&#x6570;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+    Fraction(<span class="hljs-keyword">int</span> numerator, <span class="hljs-keyword">int</span> denomirator=<span class="hljs-number">1</span>)
+    :numerator_(numerator), denomirator_(denomirator){ };
+    <span class="hljs-function"><span class="hljs-keyword">operator</span> <span class="hljs-title">double</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">double</span>(<span class="hljs-number">1.0</span>*numerator_ / denomirator_);
+    }
+    Fraction <span class="hljs-keyword">operator</span>+(){
+        <span class="hljs-keyword">return</span> Fraction(...);
+    }
+};
+<span class="hljs-comment">//in main()</span>
+<span class="hljs-function">Fraction <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)</span></span>;
+<span class="hljs-comment">// &#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x77E5;&#x9053;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5C06;4&#x8F6C;&#x6362;&#x4E3A;F(4,1), &#x7136;&#x540E;&#x8C03;&#x7528;operator+</span>
+<span class="hljs-comment">// &#x8FD8;&#x662F;Fraction d2 = 4.6&#xFF0C;&#x4EA7;&#x751F;&#x4E8C;&#x4E49;&#x6027;</span>
+Fraction d2 = <span class="hljs-number">4</span> + f;
 </code></pre>
 </blockquote>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
@@ -1856,7 +1856,7 @@ Fraction d2 <span class="token operator">=</span> <span class="token number">4</
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"4.4 转换函数","level":"1.2.4.4","depth":3,"next":{"title":"4.5 函数对象与lambda表达式","level":"1.2.4.5","depth":3,"path":"1.C++/4.函数/5.函数对象与lambda表达式.md","ref":"1.C++/4.函数/5.函数对象与lambda表达式.md","articles":[]},"previous":{"title":"4.3 函数重载","level":"1.2.4.3","depth":3,"path":"1.C++/4.函数/3.函数重载.md","ref":"1.C++/4.函数/3.函数重载.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/4.函数/4.转换函数.md","mtime":"2020-02-27T06:58:13.258Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"4.4 转换函数","level":"1.2.4.4","depth":3,"next":{"title":"4.5 函数对象与lambda表达式","level":"1.2.4.5","depth":3,"path":"1.C++/4.函数/5.函数对象与lambda表达式.md","ref":"1.C++/4.函数/5.函数对象与lambda表达式.md","articles":[]},"previous":{"title":"4.3 函数重载","level":"1.2.4.3","depth":3,"path":"1.C++/4.函数/3.函数重载.md","ref":"1.C++/4.函数/3.函数重载.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/4.函数/4.转换函数.md","mtime":"2020-02-27T06:58:13.258Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>

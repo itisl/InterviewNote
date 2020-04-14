@@ -37,7 +37,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -1766,11 +1766,11 @@
 <h3 id="2-&#x6DF1;&#x62F7;&#x8D1D;">2. &#x6DF1;&#x62F7;&#x8D1D;</h3>
 <p><strong>&#x6DF1;&#x62F7;&#x8D1D;</strong>&#xFF1A;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;&#x5B8C;&#x6574;&#x72B6;&#x6001;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;&#x5F00;&#x8F9F;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x5730;&#x5740;&#x5B58;&#x50A8;&#x6307;&#x9488;&#x6307;&#x5411;&#x5730;&#x5740;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
 <h4 id="&#x6DF1;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6DF1;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</h4>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// String&#x5BF9;&#x8C61;&#x7684;&#x6DF1;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
-<span class="token keyword">inline</span> String<span class="token operator">::</span><span class="token function">String</span><span class="token punctuation">(</span>String<span class="token operator">&amp;</span> str<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    data_<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token function">strlen</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>data_<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token function">strcpy</span><span class="token punctuation">(</span>data_<span class="token punctuation">,</span> str<span class="token punctuation">.</span>data_<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-comment">// String&#x5BF9;&#x8C61;&#x7684;&#x6DF1;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">inline</span> String::String(String&amp; str){
+    data_=<span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-built_in">strlen</span>(str.data_) + <span class="hljs-number">1</span>];
+    <span class="hljs-built_in">strcpy</span>(data_, str.data_);
+}
 </code></pre>
 <h4 id="&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;">&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</h4>
 <p>&#x5B58;&#x5728;&#x6DF1;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x8FD8;&#x5FC5;&#x987B;&#x5B9A;&#x4E49;<strong>&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</strong>&#xFF0C;&#x5373;<code>operator=</code>
@@ -1778,20 +1778,20 @@
 <ol>
 <li>&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x81EA;&#x6211;&#x8D4B;&#x503C;</li>
 <li><code>delete</code>&#x6389;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x7684;&#x5185;&#x5B58;</li>
-<li><code>new</code>&#x51FA;&#x4E00;&#x5757;&#x4E0E;&#x88AB;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x76F8;&#x7B49;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x5E76;&#x590D;&#x5236;<pre class="language-"><code class="lang-cpp"><span class="token comment">// String&#x5BF9;&#x8C61;&#x7684;&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</span>
-<span class="token keyword">inline</span> String<span class="token operator">&amp;</span>String<span class="token operator">::</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> String<span class="token operator">&amp;</span> str<span class="token punctuation">)</span><span class="token punctuation">{</span>
- <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> <span class="token operator">&amp;</span>str<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x81EA;&#x6211;&#x8D4B;&#x503C;</span>
-     <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
- <span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data_<span class="token punctuation">;</span> <span class="token comment">//&#x5148;delete&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
- <span class="token keyword">this</span><span class="token punctuation">.</span>data_ <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token function">strlen</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>m_data<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//+1&#x662F;&#x672B;&#x5C3E;&#x7684;&apos;\0&apos;</span>
- <span class="token function">strcpy</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data_<span class="token punctuation">,</span> str<span class="token punctuation">.</span>data_<span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<li><code>new</code>&#x51FA;&#x4E00;&#x5757;&#x4E0E;&#x88AB;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x76F8;&#x7B49;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x5E76;&#x590D;&#x5236;<pre><code class="lang-cpp"><span class="hljs-comment">// String&#x5BF9;&#x8C61;&#x7684;&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">inline</span> String&amp;String::<span class="hljs-keyword">operator</span>=(<span class="hljs-keyword">const</span> String&amp; str){
+ <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> == &amp;str){ <span class="hljs-comment">//&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x81EA;&#x6211;&#x8D4B;&#x503C;</span>
+     <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+ }
+ <span class="hljs-keyword">delete</span>[] <span class="hljs-keyword">this</span>.data_; <span class="hljs-comment">//&#x5148;delete&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+ <span class="hljs-keyword">this</span>.data_ = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-built_in">strlen</span>(str.m_data) + <span class="hljs-number">1</span>]; <span class="hljs-comment">//+1&#x662F;&#x672B;&#x5C3E;&#x7684;&apos;\0&apos;</span>
+ <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>.data_, str.data_);
+ <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+}
 </code></pre>
-<pre class="language-"><code class="lang-cpp">String <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-String <span class="token function">s2</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
-s2 <span class="token operator">=</span> s1<span class="token punctuation">;</span> <span class="token comment">// &#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</span>
+<pre><code class="lang-cpp"><span class="hljs-function">String <span class="hljs-title">s1</span><span class="hljs-params">(<span class="hljs-string">&quot;hello&quot;</span>)</span></span>;
+<span class="hljs-function">String <span class="hljs-title">s2</span><span class="hljs-params">(s1)</span></span>; <span class="hljs-comment">// &#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+s2 = s1; <span class="hljs-comment">// &#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x51FD;&#x6570;</span>
 </code></pre>
 <h2 id="&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#xFF1A;">&#x79FB;&#x52A8;&#x64CD;&#x4F5C;&#xFF1A;</h2>
 &#x4EE3;&#x66FF;&#x6DF1;&#x62F7;&#x8D1D;&#xFF0C;&#x6700;&#x5C0F;&#x5316;&#x62F7;&#x8D1D;&#x91CF;&#x800C;&#x4E0D;&#x4F1A;&#x589E;&#x52A0;&#x590D;&#x6742;&#x6027;</li>
@@ -1839,7 +1839,7 @@ s2 <span class="token operator">=</span> s1<span class="token punctuation">;</sp
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"3.5 拷贝与移动","level":"1.2.3.5","depth":3,"next":{"title":"3.6 继承与派生","level":"1.2.3.6","depth":3,"path":"1.C++/3.类与对象/6.继承与派生.md","ref":"1.C++/3.类与对象/6.继承与派生.md","articles":[]},"previous":{"title":"3.4 成员类型关键词","level":"1.2.3.4","depth":3,"path":"1.C++/3.类与对象/4.成员类型关键词.md","ref":"1.C++/3.类与对象/4.成员类型关键词.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","-highlight","prism","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"cpp":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/5.拷贝与移动.md","mtime":"2020-03-23T04:58:21.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T13:52:49.014Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"3.5 拷贝与移动","level":"1.2.3.5","depth":3,"next":{"title":"3.6 继承与派生","level":"1.2.3.6","depth":3,"path":"1.C++/3.类与对象/6.继承与派生.md","ref":"1.C++/3.类与对象/6.继承与派生.md","articles":[]},"previous":{"title":"3.4 成员类型关键词","level":"1.2.3.4","depth":3,"path":"1.C++/3.类与对象/4.成员类型关键词.md","ref":"1.C++/3.类与对象/4.成员类型关键词.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"1.C++/3.类与对象/5.拷贝与移动.md","mtime":"2020-03-23T04:58:21.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T14:06:11.720Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>
