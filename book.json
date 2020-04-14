@@ -18,37 +18,17 @@
     "-lunr", 
     "-search", 
     "search-pro",
-    "klipse"
+    "klipse",
+    "cuav-chapters",
+    "heading-anchors",
+    "theme-fexa"
 ],
 "pluginsConfig": {
     "donate": {
-        "alipay": "./imgs/donate.png",
+        "alipay": "https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png",
         "title": "",
-        "button": "使不得",
-        "alipayText": " "
-    },
-    "sharing": {
-        "douban": false,
-        "facebook": false,
-        "google": false,
-        "hatenaBookmark": false,
-        "instapaper": false,
-        "line": false,
-        "linkedin": false,
-        "messenger": false,
-        "pocket": false,
-        "qq": false,
-        "qzone": false,
-        "stumbleupon": false,
-        "twitter": false,
-        "viber": false,
-        "vk": false,
-        "weibo": false,
-        "whatsapp": false,
-        "all": [
-            "google", "facebook", "weibo", "twitter",
-            "qq", "qzone", "linkedin", "pocket"
-        ]
+        "button": "赞赏",
+        "alipayText": "使不得啊！"
     }
 }
 }
