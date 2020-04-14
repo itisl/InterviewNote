@@ -1,60 +1,63 @@
 {
-  "title": "Lzy's Cpp Notebook",
-  "author": "Lzy",
-  "description": "Lzy's Cpp Notebook",
-  "language": "zh-hans",
-  "gitbook": "3.2.3",
-  "structure": {
+    "title": "Lzy's Interview Notebook",
+    "author": "Lzy",
+    "description": "Lzy's Interview Notebook",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "structure": {
       "readme": "README.md"
-  },
+    },
+    "links" : {
+    "sidebar" : {
+        "Home" : "https://www.baidu.com"
+    }
+},
 
-  "plugins": [
-      "-sharing",
-      "sharing-plus",
-      "splitter",
-      "back-to-top-button",
-      "github",
-      "github-buttons",
-      "chapter-fold",
-      "donate",
-      "expandable-chapters",
-      "code",
-      "todo",
-      "-lunr", 
-      "-search", 
-      "search-pro",
-      "ancre-navigation",
-      "klipse"
-  ],
-  "pluginsConfig": {
-      "donate": {
-          "alipay": "./imgs/donate.png",
-          "title": "使不得",
-          "button": "使不得",
-          "alipayText": " "
-      },
-      "sharing": {
-          "douban": false,
-          "facebook": false,
-          "google": false,
-          "hatenaBookmark": false,
-          "instapaper": false,
-          "line": false,
-          "linkedin": false,
-          "messenger": false,
-          "pocket": false,
-          "qq": false,
-          "qzone": false,
-          "stumbleupon": false,
-          "twitter": false,
-          "viber": false,
-          "vk": false,
-          "weibo": false,
-          "whatsapp": false,
-          "all": [
-              "google", "facebook", "weibo", "twitter",
-              "qq", "qzone", "linkedin", "pocket"
-          ]
-      }
-  }
+"plugins": [
+    "-sharing",
+    "sharing-plus",
+    "splitter",
+    "back-to-top-button",
+    "github",
+    "github-buttons",
+    "donate",
+    "copy-code-button",
+    "todo",
+    "-lunr", 
+    "-search", 
+    "search-pro",
+    "ancre-navigation",
+    "klipse"
+],
+"pluginsConfig": {
+    "donate": {
+        "alipay": "./imgs/donate.png",
+        "title": "阿姨，使不得",
+        "button": "打赏",
+        "alipayText": " "
+    },
+    "sharing": {
+        "douban": false,
+        "facebook": false,
+        "google": false,
+        "hatenaBookmark": false,
+        "instapaper": false,
+        "line": false,
+        "linkedin": false,
+        "messenger": false,
+        "pocket": false,
+        "qq": false,
+        "qzone": false,
+        "stumbleupon": false,
+        "twitter": false,
+        "viber": false,
+        "vk": false,
+        "weibo": false,
+        "whatsapp": false,
+        "all": [
+            "google", "facebook", "weibo", "twitter",
+            "qq", "qzone", "linkedin", "pocket"
+        ]
+    }
+}
 }
