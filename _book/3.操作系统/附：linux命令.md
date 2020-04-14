@@ -1,6 +1,6 @@
 ## linux命令
 
-[TOC]
+
 
 **资源查看**
 ![资源查看常用指令](https://i.loli.net/2020/04/07/6yTfInj4U7WveAH.png)
