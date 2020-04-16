@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>5.索引 · Lzy's Interview Notebook</title>
+        <title>面试题：SQL语句执行很慢的原因 · Lzy's Interview Notebook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -80,7 +80,7 @@
     <link rel="next" href="../6.常见算法题/" />
     
     
-    <link rel="prev" href="4.事务.html" />
+    <link rel="prev" href="5.索引.md" />
     
 
     </head>
@@ -229,12 +229,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.6" data-path="../1.C++/1.编译与链接/6.附：常用头文件.html">
+        <li class="chapter " data-level="1.2.1.6" data-path="../1.C++/1.编译与链接/6.链接与符号.html">
             
-                <a href="../1.C++/1.编译与链接/6.附：常用头文件.html">
+                <a href="../1.C++/1.编译与链接/6.链接与符号.html">
             
                     
-                    1.6 附：常用头文件
+                    1.6 链接与符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../1.C++/1.编译与链接/附：常用头文件.html">
+            
+                <a href="../1.C++/1.编译与链接/附：常用头文件.html">
+            
+                    
+                    附：常用头文件
             
                 </a>
             
@@ -759,12 +772,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../1.C++/7.内存模型/2.堆栈、new和delete.html">
+        <li class="chapter " data-level="1.2.7.2" data-path="../1.C++/7.内存模型/2.内存、堆、栈.html">
             
-                <a href="../1.C++/7.内存模型/2.堆栈、new和delete.html">
+                <a href="../1.C++/7.内存模型/2.内存、堆、栈.html">
             
                     
-                    7.2 堆栈、new和delete
+                    7.2 内存、堆、栈
             
                 </a>
             
@@ -772,12 +785,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../1.C++/7.内存模型/3.虚函数表与虚指针.html">
+        <li class="chapter " data-level="1.2.7.3" data-path="../1.C++/7.内存模型/3.new和delete.html">
             
-                <a href="../1.C++/7.内存模型/3.虚函数表与虚指针.html">
+                <a href="../1.C++/7.内存模型/3.new和delete.html">
             
                     
-                    7.3 虚函数表与虚指针
+                    7.3 new和delete
             
                 </a>
             
@@ -817,6 +830,19 @@
             
                     
                     7.6 智能指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.7" data-path="../1.C++/7.内存模型/7.虚函数表与虚指针.html">
+            
+                <a href="../1.C++/7.内存模型/7.虚函数表与虚指针.html">
+            
+                    
+                    7.7 虚函数表与虚指针
             
                 </a>
             
@@ -1436,9 +1462,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="4.事务.html">
+        <li class="chapter " data-level="1.6.4" data-path="4.事务.md">
             
-                <a href="4.事务.html">
+                <span>
             
                     
                     4.事务
@@ -1449,12 +1475,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.5" data-path="5.索引.html">
+        <li class="chapter " data-level="1.6.5" data-path="5.索引.md">
             
-                <a href="5.索引.html">
+                <span>
             
                     
                     5.索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.6" data-path="面试题：SQL语句执行很慢的原因.html">
+            
+                <a href="面试题：SQL语句执行很慢的原因.html">
+            
+                    
+                    面试题：SQL语句执行很慢的原因
             
                 </a>
             
@@ -1744,7 +1783,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >5.索引</a>
+        <a href=".." >面试题：SQL语句执行很慢的原因</a>
     </h1>
 </div>
 
@@ -1759,8 +1798,86 @@
     
 					<section class="normal markdown-section">
 						
-						<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html" target="_blank">http://blog.codinglabs.org/articles/theory-of-mysql-index.html</a></p>
-<p><a href="https://mp.weixin.qq.com/s/RemJcqPIvLArmfWIhoaZ1g" target="_blank">https://mp.weixin.qq.com/s/RemJcqPIvLArmfWIhoaZ1g</a></p>
+						<p>&#x4E00;&#x4E2A; SQL &#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5206;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x8BA8;&#x8BBA;&#xFF1A;</p>
+<p>1&#x3001;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x5F88;&#x6B63;&#x5E38;&#xFF0C;&#x5076;&#x5C14;&#x5F88;&#x6162;&#xFF0C;&#x5219;&#x6709;&#x5982;&#x4E0B;&#x539F;&#x56E0;</p>
+<p>(1)&#x3001;&#x6570;&#x636E;&#x5E93;&#x5728;&#x5237;&#x65B0;&#x810F;&#x9875;&#xFF0C;&#x4F8B;&#x5982; redo log &#x5199;&#x6EE1;&#x4E86;&#x9700;&#x8981;&#x540C;&#x6B65;&#x5230;&#x78C1;&#x76D8;&#x3002;</p>
+<p>(2)&#x3001;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9047;&#x5230;&#x9501;&#xFF0C;&#x5982;&#x8868;&#x9501;&#x3001;&#x884C;&#x9501;&#x3002;</p>
+<p>2&#x3001;&#x8FD9;&#x6761; SQL &#x8BED;&#x53E5;&#x4E00;&#x76F4;&#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#xFF0C;&#x5219;&#x6709;&#x5982;&#x4E0B;&#x539F;&#x56E0;&#x3002;</p>
+<p>(1)&#x3001;&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#xFF1A;&#x4F8B;&#x5982;&#x8BE5;&#x5B57;&#x6BB5;&#x6CA1;&#x6709;&#x7D22;&#x5F15;&#xFF1B;&#x7531;&#x4E8E;&#x5BF9;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x3001;&#x51FD;&#x6570;&#x64CD;&#x4F5C;&#x5BFC;&#x81F4;&#x65E0;&#x6CD5;&#x7528;&#x7D22;&#x5F15;&#x3002;</p>
+<p>(2)&#x3001;&#x6570;&#x636E;&#x5E93;&#x9009;&#x9519;&#x4E86;&#x7D22;&#x5F15;&#x3002;</p>
+<h4 id="&#x5F00;&#x59CB;&#x88C5;&#x903C;&#xFF1A;&#x5206;&#x7C7B;&#x8BA8;&#x8BBA;">&#x5F00;&#x59CB;&#x88C5;&#x903C;&#xFF1A;&#x5206;&#x7C7B;&#x8BA8;&#x8BBA;</h4>
+<p>&#x4E00;&#x6761; SQL &#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#xFF0C;&#x90A3;&#x662F;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x90FD;&#x5F88;&#x6162;&#x5462;&#xFF1F;&#x8FD8;&#x662F;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x5076;&#x5C14;&#x51FA;&#x73B0;&#x5F88;&#x6162;&#x5462;&#xFF1F;&#x6240;&#x4EE5;&#x6211;&#x89C9;&#x5F97;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5F97;&#x5206;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x6765;&#x8BA8;&#x8BBA;&#x3002;</p>
+<p>1&#x3001;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x53EA;&#x662F;&#x5076;&#x5C14;&#x4F1A;&#x51FA;&#x73B0;&#x5F88;&#x6162;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p>2&#x3001;&#x5728;&#x6570;&#x636E;&#x91CF;&#x4E0D;&#x53D8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x6761;SQL&#x8BED;&#x53E5;&#x4E00;&#x76F4;&#x4EE5;&#x6765;&#x90FD;&#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#x3002;</p>
+<p>&#x9488;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5206;&#x6790;&#x4E0B;&#x53EF;&#x80FD;&#x662F;&#x54EA;&#x4E9B;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x7684;&#x3002;</p>
+<h4 id="&#x9488;&#x5BF9;&#x5076;&#x5C14;&#x5F88;&#x6162;&#x7684;&#x60C5;&#x51B5;">&#x9488;&#x5BF9;&#x5076;&#x5C14;&#x5F88;&#x6162;&#x7684;&#x60C5;&#x51B5;</h4>
+<p>&#x4E00;&#x6761; SQL &#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x6B63;&#x5E38;&#xFF0C;&#x5076;&#x5C14;&#x624D;&#x80FD;&#x51FA;&#x73B0;&#x5F88;&#x6162;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x6761;SQL&#x8BED;&#x53E5;&#x7684;&#x4E66;&#x5199;&#x672C;&#x8EAB;&#x662F;&#x6CA1;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x5176;&#x4ED6;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x90A3;&#x4F1A;&#x662F;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#x5462;&#xFF1F;</p>
+<h5 id="&#x6570;&#x636E;&#x5E93;&#x5728;&#x5237;&#x65B0;&#x810F;&#x9875;&#x6211;&#x4E5F;&#x65E0;&#x5948;&#x554A;">&#x6570;&#x636E;&#x5E93;&#x5728;&#x5237;&#x65B0;&#x810F;&#x9875;&#x6211;&#x4E5F;&#x65E0;&#x5948;&#x554A;</h5>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x8981;&#x5F80;&#x6570;&#x636E;&#x5E93;&#x63D2;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;&#x3001;&#x6216;&#x8005;&#x8981;&#x66F4;&#x65B0;&#x4E00;&#x6761;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x6570;&#x636E;&#x5E93;&#x4F1A;&#x5728;<strong>&#x5185;&#x5B58;</strong>&#x4E2D;&#x628A;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x4E9B;&#x66F4;&#x65B0;&#x7684;&#x5B57;&#x6BB5;&#x5E76;&#x4E0D;&#x4F1A;&#x9A6C;&#x4E0A;&#x540C;&#x6B65;&#x6301;&#x4E45;&#x5316;&#x5230;<strong>&#x78C1;&#x76D8;</strong>&#x4E2D;&#x53BB;&#xFF0C;&#x800C;&#x662F;&#x628A;&#x8FD9;&#x4E9B;&#x66F4;&#x65B0;&#x7684;&#x8BB0;&#x5F55;&#x5199;&#x5165;&#x5230; redo log &#x65E5;&#x8BB0;&#x4E2D;&#x53BB;&#xFF0C;&#x7B49;&#x5230;&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x901A;&#x8FC7; redo log &#x91CC;&#x7684;&#x65E5;&#x8BB0;&#x628A;&#x6700;&#x65B0;&#x7684;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;<strong>&#x78C1;&#x76D8;</strong>&#x4E2D;&#x53BB;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;redo log &#x91CC;&#x7684;&#x5BB9;&#x91CF;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x76F4;&#x5F88;&#x5FD9;&#xFF0C;&#x66F4;&#x65B0;&#x53C8;&#x5F88;&#x9891;&#x7E41;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019; redo log &#x5F88;&#x5FEB;&#x5C31;&#x4F1A;&#x88AB;&#x5199;&#x6EE1;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x6CA1;&#x529E;&#x6CD5;&#x7B49;&#x5230;&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x5019;&#x518D;&#x628A;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x78C1;&#x76D8;&#x7684;&#xFF0C;&#x53EA;&#x80FD;&#x6682;&#x505C;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#xFF0C;&#x5168;&#x8EAB;&#x5FC3;&#x6765;&#x628A;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x78C1;&#x76D8;&#x4E2D;&#x53BB;&#x7684;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;<strong>&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x5E73;&#x65F6;&#x6B63;&#x5E38;&#x7684;SQL&#x8BED;&#x53E5;&#x7A81;&#x7136;&#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;</strong>&#xFF0C;&#x6240;&#x4EE5;&#x8BF4;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x5728;&#x5728;&#x540C;&#x6B65;&#x6570;&#x636E;&#x5230;&#x78C1;&#x76D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x7684;SQL&#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#x4E86;&#x3002;</p>
+<h5 id="&#x62FF;&#x4E0D;&#x5230;&#x9501;&#x6211;&#x80FD;&#x600E;&#x4E48;&#x529E;">&#x62FF;&#x4E0D;&#x5230;&#x9501;&#x6211;&#x80FD;&#x600E;&#x4E48;&#x529E;</h5>
+<p>&#x8FD9;&#x4E2A;&#x5C31;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6267;&#x884C;&#x7684;&#x8FD9;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x521A;&#x597D;&#x8FD9;&#x6761;&#x8BED;&#x53E5;&#x6D89;&#x53CA;&#x5230;&#x7684;<strong>&#x8868;</strong>&#xFF0C;&#x522B;&#x4EBA;&#x5728;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x52A0;&#x9501;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x62FF;&#x4E0D;&#x5230;&#x9501;&#xFF0C;&#x53EA;&#x80FD;&#x6162;&#x6162;&#x7B49;&#x5F85;&#x522B;&#x4EBA;&#x91CA;&#x653E;&#x9501;&#x4E86;&#x3002;&#x6216;&#x8005;&#xFF0C;&#x8868;&#x6CA1;&#x6709;&#x52A0;&#x9501;&#xFF0C;&#x4F46;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x67D0;&#x4E2A;&#x4E00;&#x884C;&#x88AB;&#x52A0;&#x9501;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4E5F;&#x6CA1;&#x529E;&#x6CD5;&#x554A;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x5224;&#x65AD;&#x662F;&#x5426;&#x771F;&#x7684;&#x5728;&#x7B49;&#x5F85;&#x9501;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; <strong>show processlist</strong>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x54E6;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x8981;&#x63D0;&#x9192;&#x4E00;&#x4E0B;&#xFF0C;&#x6709;&#x4E9B;&#x547D;&#x4EE4;&#x6700;&#x597D;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#xFF0C;&#x53CD;&#x6B63;&#xFF0C;&#x6211;&#x88AB;&#x95EE;&#x4E86;&#x597D;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x90FD;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x5199;&#xFF0C;&#x5475;&#x5475;&#x3002;</p>
+<p>&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6765;&#x8BBF;&#x5206;&#x6790;&#x4E0B;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x5206;&#x6790;&#x624D;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;</p>
+<h4 id="&#x9488;&#x5BF9;&#x4E00;&#x76F4;&#x90FD;&#x8FD9;&#x4E48;&#x6162;&#x7684;&#x60C5;&#x51B5;">&#x9488;&#x5BF9;&#x4E00;&#x76F4;&#x90FD;&#x8FD9;&#x4E48;&#x6162;&#x7684;&#x60C5;&#x51B5;</h4>
+<p>&#x5982;&#x679C;&#x5728;&#x6570;&#x636E;&#x91CF;&#x4E00;&#x6837;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x6761; SQL &#x8BED;&#x53E5;&#x6BCF;&#x6B21;&#x90FD;&#x6267;&#x884C;&#x7684;&#x8FD9;&#x4E48;&#x6162;&#xFF0C;&#x90A3;&#x5C31;&#x5C31;&#x8981;&#x597D;&#x597D;&#x8003;&#x8651;&#x4E0B;&#x4F60;&#x7684; SQL &#x4E66;&#x5199;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x5206;&#x6790;&#x4E0B;&#x54EA;&#x4E9B;&#x539F;&#x56E0;&#x4F1A;&#x5BFC;&#x81F4;&#x6211;&#x4EEC;&#x7684; SQL &#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x5F88;&#x4E0D;&#x7406;&#x60F3;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x8868;&#xFF0C;&#x8868;&#x91CC;&#x6709;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;,&#x5206;&#x522B;&#x662F;&#x4E3B;&#x952E; id&#xFF0C;&#x548C;&#x4E24;&#x4E2A;&#x666E;&#x901A;&#x5B57;&#x6BB5; c &#x548C; d&#x3002;</p>
+<pre><code class="lang-java">mysql&gt; CREATE TABLE `t` (
+  `id` <span class="hljs-keyword">int</span>(<span class="hljs-number">11</span>) NOT NULL,
+  `c` <span class="hljs-keyword">int</span>(<span class="hljs-number">11</span>) DEFAULT NULL,
+  `d` <span class="hljs-keyword">int</span>(<span class="hljs-number">11</span>) DEFAULT NULL,
+  <span class="hljs-function">PRIMARY <span class="hljs-title">KEY</span> <span class="hljs-params">(`id`)</span>
+) ENGINE</span>=InnoDB;
+</code></pre>
+<h5 id="&#x624E;&#x5FC3;&#x4E86;&#xFF0C;&#x6CA1;&#x7528;&#x5230;&#x7D22;&#x5F15;">&#x624E;&#x5FC3;&#x4E86;&#xFF0C;&#x6CA1;&#x7528;&#x5230;&#x7D22;&#x5F15;</h5>
+<p>&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#x662F;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x80FD;&#x60F3;&#x5230;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x4F60;&#x8981;&#x67E5;&#x8BE2;&#x8FD9;&#x6761;&#x8BED;&#x53E5;</p>
+<pre><code>select * from t where 100 &lt;c and c &lt; 100000;
+</code></pre><p><strong>&#x5B57;&#x6BB5;&#x6CA1;&#x6709;&#x7D22;&#x5F15;</strong></p>
+<p>&#x521A;&#x597D;&#x4F60;&#x7684; c &#x5B57;&#x6BB5;&#x4E0A;&#x6CA1;&#x6709;&#x7D22;&#x5F15;&#xFF0C;&#x90A3;&#x4E48;&#x62B1;&#x6B49;&#xFF0C;&#x53EA;&#x80FD;&#x8D70;&#x5168;&#x8868;&#x626B;&#x63CF;&#x4E86;&#xFF0C;&#x4F60;&#x5C31;&#x4F53;&#x9A8C;&#x4E0D;&#x4F1A;&#x7D22;&#x5F15;&#x5E26;&#x6765;&#x7684;&#x4E50;&#x8DA3;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x56DE;&#x5BFC;&#x81F4;&#x8FD9;&#x6761;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x5F88;&#x6162;&#x3002;</p>
+<p><strong>&#x5B57;&#x6BB5;&#x6709;&#x7D22;&#x5F15;&#xFF0C;&#x4F46;&#x5374;&#x6CA1;&#x6709;&#x7528;&#x7D22;&#x5F15;</strong></p>
+<p>&#x597D;&#x5427;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F60;&#x7ED9; c &#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x52A0;&#x4E0A;&#x4E86;&#x7D22;&#x5F15;&#xFF0C;&#x7136;&#x540E;&#x53C8;&#x67E5;&#x8BE2;&#x4E86;&#x4E00;&#x6761;&#x8BED;&#x53E5;</p>
+<pre><code>select * from t where c - 1 = 1000;
+</code></pre><p>&#x6211;&#x60F3;&#x95EE;&#x5927;&#x5BB6;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x7528;&#x7D22;&#x5F15;&#x67E5;&#x8BE2;&#x5417;&#xFF1F;</p>
+<p>&#x7B54;&#x662F;&#x4E0D;&#x4F1A;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x5B57;&#x6BB5;&#x7684;&#x5DE6;&#x8FB9;&#x505A;&#x4E86;&#x8FD0;&#x7B97;&#xFF0C;&#x90A3;&#x4E48;&#x5F88;&#x62B1;&#x6B49;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x5927;&#x5BB6;&#x8981;&#x6CE8;&#x610F;&#x8FD9;&#x79CD;<strong>&#x5B57;&#x6BB5;&#x4E0A;&#x6709;&#x7D22;&#x5F15;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x758F;&#x5FFD;&#xFF0C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7D22;&#x5F15;</strong>&#x7684;&#x60C5;&#x51B5;&#x4E86;&#x3002;</p>
+<p>&#x6B63;&#x786E;&#x7684;&#x67E5;&#x8BE2;&#x5E94;&#x8BE5;&#x5982;&#x4E0B;</p>
+<pre><code>select * from t where c = 1000 + 1;
+</code></pre><p>&#x6709;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x8BF4;&#xFF0C;&#x53F3;&#x8FB9;&#x6709;&#x8FD0;&#x7B97;&#x5C31;&#x80FD;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#xFF1F;&#x96BE;&#x9053;&#x6570;&#x636E;&#x5E93;&#x5C31;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5E2E;&#x6211;&#x4EEC;&#x4F18;&#x5316;&#x4E00;&#x4E0B;&#xFF0C;&#x81EA;&#x52A8;&#x628A; c - 1=1000 &#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A; c = 1000+1&#x3002;</p>
+<p>&#x4E0D;&#x597D;&#x610F;&#x601D;&#xFF0C;&#x786E;&#x5B9E;&#x4E0D;&#x4F1A;&#x5E2E;&#x4F60;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x4F60;&#x8981;&#x6CE8;&#x610F;&#x4E86;&#x3002;</p>
+<p><strong>&#x51FD;&#x6570;&#x64CD;&#x4F5C;&#x5BFC;&#x81F4;&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#x7D22;&#x5F15;</strong></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x4E86;&#x51FD;&#x6570;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x662F;&#x4F1A;&#x5BFC;&#x81F4;&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#x7684;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code>select * from t where pow(c,2) = 1000;
+</code></pre><p>&#x8FD9;&#x91CC;&#x6211;&#x53EA;&#x662F;&#x505A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5047;&#x8BBE;&#x51FD;&#x6570; pow &#x662F;&#x6C42; c &#x7684; n &#x6B21;&#x65B9;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x80FD;&#x5E76;&#x6CA1;&#x6709; pow(c,2)&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x5176;&#x5B9E;&#x8FD9;&#x4E2A;&#x548C;&#x4E0A;&#x9762;&#x5728;&#x5DE6;&#x8FB9;&#x505A;&#x8FD0;&#x7B97;&#x4E5F;&#x662F;&#x5F88;&#x7C7B;&#x4F3C;&#x7684;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x90FD;&#x5F88;&#x6162;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x8BE5;&#x8BED;&#x53E5;&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#x5177;&#x4F53;&#x662F;&#x5565;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x6CA1;&#x6709;&#x7528;&#x4E0A;&#x7D22;&#x5F15;&#x7684;&#x5462;&#xFF0C;&#x4F60;&#x5C31;&#x8981;&#x4F1A;&#x5206;&#x6790;&#x4E86;&#xFF0C;&#x6211;&#x4E0A;&#x9762;&#x5217;&#x4E3E;&#x7684;&#x4E09;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x51FA;&#x73B0;&#x7684;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x5427;&#x3002;</p>
+<h5 id="&#x5475;&#x5475;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x81EA;&#x5DF1;&#x9009;&#x9519;&#x7D22;&#x5F15;&#x4E86;">&#x5475;&#x5475;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x81EA;&#x5DF1;&#x9009;&#x9519;&#x7D22;&#x5F15;&#x4E86;</h5>
+<p>&#x6211;&#x4EEC;&#x5728;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code>select * from t where 100 &lt; c and c &lt; 100000;
+</code></pre><p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x548C;&#x975E;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;&#xFF0C;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x5B58;&#x653E;&#x7684;&#x503C;&#x662F;<strong>&#x6574;&#x884C;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;</strong>&#xFF0C;&#x800C;&#x975E;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x4E0A;&#x5B58;&#x653E;&#x7684;&#x503C;&#x4E0D;&#x662F;&#x6574;&#x884C;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E14;&#x5B58;&#x653E;<strong>&#x4E3B;&#x952E;&#x5B57;&#x6BB5;&#x7684;&#x503C;</strong>&#x3002;&#x4E0D;&#x5927;&#x61C2;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x6211;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#xFF1A;<a href="https://mp.weixin.qq.com/s/RemJcqPIvLArmfWIhoaZ1g" target="_blank">&#x9762;&#x8BD5;&#x5C0F;&#x77E5;&#x8BC6;&#xFF1A;MySQL&#x7D22;&#x5F15;&#x76F8;&#x5173;</a>    &#x91CC;&#x9762;&#x6709;&#x8BF4;&#x5230;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x548C;&#x975E;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x7684;&#x533A;&#x522B;</p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5982;&#x679C;&#x8D70; c &#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x7D22;&#x5F15;&#x7684;&#x8BDD;&#xFF0C;&#x6700;&#x540E;&#x4F1A;&#x67E5;&#x8BE2;&#x5230;&#x5BF9;&#x5E94;&#x4E3B;&#x952E;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x518D;&#x6839;&#x636E;&#x4E3B;&#x952E;&#x7684;&#x503C;&#x8D70;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#xFF0C;&#x67E5;&#x8BE2;&#x5230;&#x6574;&#x884C;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x597D;&#x5427;&#x626F;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x5C31;&#x662F;&#x60F3;&#x544A;&#x8BC9;&#x4F60;&#xFF0C;&#x5C31;&#x7B97;&#x4F60;&#x5728; c &#x5B57;&#x6BB5;&#x4E0A;&#x6709;&#x7D22;&#x5F15;&#xFF0C;&#x7CFB;&#x7EDF;&#x4E5F;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x8D70; c &#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0A;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x800C;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x76F4;&#x63A5;&#x626B;&#x63CF;&#x626B;&#x63CF;&#x5168;&#x8868;&#xFF0C;&#x627E;&#x51FA;&#x6240;&#x6709;&#x7B26;&#x5408; 100 &lt; c and c &lt; 100000 &#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x8FD9;&#x6837;&#x5462;&#xFF1F;</strong></p>
+<p>&#x5176;&#x5B9E;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x7CFB;&#x7EDF;&#x5728;&#x6267;&#x884C;&#x8FD9;&#x6761;&#x8BED;&#x53E5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF1A;&#x7A76;&#x7ADF;&#x662F;&#x8D70; c &#x7D22;&#x5F15;&#x626B;&#x63CF;&#x7684;&#x884C;&#x6570;&#x5C11;&#xFF0C;&#x8FD8;&#x662F;&#x76F4;&#x63A5;&#x626B;&#x63CF;&#x5168;&#x8868;&#x626B;&#x63CF;&#x7684;&#x884C;&#x6570;&#x5C11;&#x5462;&#xFF1F;&#x663E;&#x7136;&#xFF0C;&#x626B;&#x63CF;&#x884C;&#x6570;&#x8D8A;&#x5C11;&#x5F53;&#x7136;&#x8D8A;&#x597D;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x626B;&#x63CF;&#x884C;&#x6570;&#x8D8A;&#x5C11;&#xFF0C;&#x610F;&#x5473;&#x7740;I/O&#x64CD;&#x4F5C;&#x7684;&#x6B21;&#x6570;&#x8D8A;&#x5C11;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x626B;&#x63CF;&#x5168;&#x8868;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x626B;&#x63CF;&#x7684;&#x6B21;&#x6570;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x8868;&#x7684;&#x603B;&#x884C;&#x6570;&#x4E86;&#xFF0C;&#x5047;&#x8BBE;&#x4E3A; n&#xFF1B;&#x800C;&#x5982;&#x679C;&#x8D70;&#x7D22;&#x5F15; c &#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x7D22;&#x5F15; c &#x627E;&#x5230;&#x4E3B;&#x952E;&#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x5F97;&#x518D;&#x901A;&#x8FC7;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x6765;&#x627E;&#x6211;&#x4EEC;&#x6574;&#x884C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x9700;&#x8981;&#x8D70;&#x4E24;&#x6B21;&#x7D22;&#x5F15;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;&#x7B26;&#x5408; 100 c &lt; and c &lt; 10000 &#x8FD9;&#x4E2A;&#x6761;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x6709;&#x591A;&#x5C11;&#x884C;&#xFF0C;&#x4E07;&#x4E00;&#x8FD9;&#x4E2A;&#x8868;&#x662F;&#x5168;&#x90E8;&#x6570;&#x636E;&#x90FD;&#x7B26;&#x5408;&#x5462;&#xFF1F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x8D70; c &#x7D22;&#x5F15;&#x4E0D;&#x4EC5;&#x626B;&#x63CF;&#x7684;&#x884C;&#x6570;&#x662F; n&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x5F97;&#x6BCF;&#x884C;&#x6570;&#x636E;&#x8D70;&#x4E24;&#x6B21;&#x7D22;&#x5F15;&#x3002;</p>
+<p><strong>&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x7CFB;&#x7EDF;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x8D70;&#x5168;&#x8868;&#x626B;&#x63CF;&#x800C;&#x4E0D;&#x8D70;&#x7D22;&#x5F15;&#x7684;&#x3002;&#x90A3;&#x7CFB;&#x7EDF;&#x662F;&#x600E;&#x4E48;&#x5224;&#x65AD;&#x5462;&#xFF1F;</strong></p>
+<p>&#x5224;&#x65AD;&#x6765;&#x6E90;&#x4E8E;&#x7CFB;&#x7EDF;&#x7684;&#x9884;&#x6D4B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x8D70; c &#x5B57;&#x6BB5;&#x7D22;&#x5F15;&#x7684;&#x8BDD;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x9884;&#x6D4B;&#x8D70; c &#x5B57;&#x6BB5;&#x7D22;&#x5F15;&#x5927;&#x6982;&#x9700;&#x8981;&#x626B;&#x63CF;&#x591A;&#x5C11;&#x884C;&#x3002;&#x5982;&#x679C;&#x9884;&#x6D4B;&#x5230;&#x8981;&#x626B;&#x63CF;&#x7684;&#x884C;&#x6570;&#x5F88;&#x591A;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x5C31;&#x4E0D;&#x8D70;&#x7D22;&#x5F15;&#x800C;&#x76F4;&#x63A5;&#x626B;&#x63CF;&#x5168;&#x8868;&#x4E86;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;<strong>&#x7CFB;&#x7EDF;&#x662F;&#x600E;&#x4E48;&#x9884;&#x6D4B;&#x5224;&#x65AD;&#x7684;&#x5462;&#xFF1F;</strong>&#x8FD9;&#x91CC;&#x6211;&#x7ED9;&#x4F60;&#x8BB2;&#x4E0B;&#x7CFB;&#x7EDF;&#x662F;&#x600E;&#x4E48;&#x5224;&#x65AD;&#x7684;&#x5427;&#xFF0C;&#x867D;&#x7136;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x5DF2;&#x7ECF;&#x5199;&#x5230;&#x8116;&#x5B50;&#x6709;&#x70B9;&#x9178;&#x4E86;&#x3002;</p>
+<p>&#x7CFB;&#x7EDF;&#x662F;&#x901A;&#x8FC7;<strong>&#x7D22;&#x5F15;&#x7684;&#x533A;&#x5206;&#x5EA6;</strong>&#x6765;&#x5224;&#x65AD;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x4E0A;&#x4E0D;&#x540C;&#x7684;&#x503C;&#x8D8A;&#x591A;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x51FA;&#x73B0;&#x76F8;&#x540C;&#x6570;&#x503C;&#x7684;&#x7D22;&#x5F15;&#x8D8A;&#x5C11;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x7D22;&#x5F15;&#x7684;&#x533A;&#x5206;&#x5EA6;&#x8D8A;&#x9AD8;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x628A;&#x533A;&#x5206;&#x5EA6;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x57FA;&#x6570;</strong>&#xFF0C;&#x5373;&#x533A;&#x5206;&#x5EA6;&#x8D8A;&#x9AD8;&#xFF0C;&#x57FA;&#x6570;&#x8D8A;&#x5927;&#x3002;&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x57FA;&#x6570;&#x8D8A;&#x5927;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x7B26;&#x5408; 100 &lt; c and c &lt; 10000 &#x8FD9;&#x4E2A;&#x6761;&#x4EF6;&#x7684;&#x884C;&#x6570;&#x8D8A;&#x5C11;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x8D8A;&#x5927;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x8D70;&#x7D22;&#x5F15;&#x67E5;&#x8BE2;&#x8D8A;&#x6709;&#x4F18;&#x52BF;&#x3002;</p>
+<p><strong>&#x90A3;&#x4E48;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x5462;&#xFF1F;</strong></p>
+<p>&#x7CFB;&#x7EDF;&#x5F53;&#x7136;&#x662F;&#x4E0D;&#x4F1A;&#x904D;&#x5386;&#x5168;&#x90E8;&#x6765;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x7684;&#xFF0C;&#x4EE3;&#x4EF7;&#x592A;&#x5927;&#x4E86;&#xFF0C;&#x7D22;&#x5F15;&#x7CFB;&#x7EDF;&#x662F;&#x901A;&#x8FC7;&#x904D;&#x5386;&#x90E8;&#x5206;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x901A;&#x8FC7;<strong>&#x91C7;&#x6837;</strong>&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6765;&#x9884;&#x6D4B;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x7684;&#x3002;</p>
+<p><strong>&#x626F;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x91CD;&#x70B9;&#x7684;&#x6765;&#x4E86;</strong>&#xFF0C;&#x5C45;&#x7136;&#x662F;&#x91C7;&#x6837;&#xFF0C;&#x90A3;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;<strong>&#x5931;&#x8BEF;</strong>&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;c &#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5F88;&#x5927;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x91C7;&#x6837;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5374;&#x5F88;&#x4E0D;&#x5E78;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x9884;&#x6D4B;&#x6210;&#x5F88;&#x5C0F;&#x3002;&#x4F8B;&#x5982;&#x4F60;&#x91C7;&#x6837;&#x7684;&#x90A3;&#x4E00;&#x90E8;&#x5206;&#x6570;&#x636E;&#x521A;&#x597D;&#x57FA;&#x6570;&#x5F88;&#x5C0F;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x8BEF;&#x4EE5;&#x4E3A;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x5F88;&#x5C0F;&#x3002;<strong>&#x7136;&#x540E;&#x5C31;&#x5475;&#x5475;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C31;&#x4E0D;&#x8D70; c &#x7D22;&#x5F15;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x8D70;&#x5168;&#x90E8;&#x626B;&#x63CF;&#x4E86;</strong>&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5462;&#xFF0C;&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF1A;<strong>&#x7531;&#x4E8E;&#x7EDF;&#x8BA1;&#x7684;&#x5931;&#x8BEF;&#xFF0C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x8D70;&#x7D22;&#x5F15;&#xFF0C;&#x800C;&#x662F;&#x8D70;&#x4E86;&#x5168;&#x8868;&#x626B;&#x63CF;</strong>&#xFF0C;&#x800C;&#x8FD9;&#xFF0C;&#x4E5F;&#x662F;&#x5BFC;&#x81F4;&#x6211;&#x4EEC; SQL &#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<blockquote>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x58F0;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8D70;&#x7D22;&#x5F15;&#xFF0C;&#x626B;&#x63CF;&#x884C;&#x6570;&#x7684;&#x9884;&#x6D4B;&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x539F;&#x56E0;&#x4E4B;&#x4E00;&#xFF0C;&#x8FD9;&#x6761;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x662F;&#x5426;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x8868;&#x3001;&#x662F;&#x5426;&#x9700;&#x8981;&#x6392;&#x5E8F;&#x7B49;&#x4E5F;&#x662F;&#x4F1A;&#x5F71;&#x54CD;&#x7CFB;&#x7EDF;&#x7684;&#x9009;&#x62E9;&#x7684;&#x3002;</p>
+</blockquote>
+<p>&#x4E0D;&#x8FC7;&#x5462;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x65F6;&#x5019;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F3A;&#x5236;&#x8D70;&#x7D22;&#x5F15;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x67E5;&#x8BE2;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code>select * from t force index(a) where c &lt; 100 and c &lt; 100000;
+</code></pre><p>&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;</p>
+<pre><code>show index from t;
+</code></pre><p>&#x6765;&#x67E5;&#x8BE2;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#x548C;&#x5B9E;&#x9645;&#x662F;&#x5426;&#x7B26;&#x5408;&#xFF0C;&#x5982;&#x679C;&#x548C;&#x5B9E;&#x9645;&#x5F88;&#x4E0D;&#x7B26;&#x5408;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x6765;&#x7EDF;&#x8BA1;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x6761;&#x547D;&#x4EE4;</p>
+<pre><code>analyze table t;
+</code></pre><p> &#x6765;&#x91CD;&#x65B0;&#x7EDF;&#x8BA1;&#x5206;&#x6790;&#x3002;</p>
+<p> <strong>&#x65E2;&#x7136;&#x4F1A;&#x9884;&#x6D4B;&#x9519;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x6570;&#xFF0C;&#x8FD9;&#x4E5F;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6709;&#x591A;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7CFB;&#x7EDF;&#x6709;&#x53EF;&#x80FD;&#x4E5F;&#x4F1A;&#x9009;&#x9519;&#x7D22;&#x5F15;&#x54E6;</strong>&#xFF0C;&#x8FD9;&#x4E5F;&#x53EF;&#x80FD;&#x662F; SQL &#x6267;&#x884C;&#x7684;&#x5F88;&#x6162;&#x7684;&#x4E00;&#x4E2A;&#x539F;&#x56E0;&#x3002;</p>
+<p> &#x597D;&#x5427;&#xFF0C;&#x5C31;&#x5148;&#x626F;&#x8FD9;&#x4E48;&#x591A;&#x4E86;&#xFF0C;&#x4F60;&#x5230;&#x65F6;&#x5019;&#x80FD;&#x626F;&#x51FA;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x5DF2;&#x7ECF;&#x5F88;&#x68D2;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x505A;&#x4E00;&#x4E2A;&#x603B;&#x7ED3;&#x3002;</p>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1788,7 +1905,7 @@
 
 		
 		
-		<a href="4.事务.html" class="navigation navigation-prev " aria-label="Previous page: 4.事务">
+		<a href="5.索引.md" class="navigation navigation-prev " aria-label="Previous page: 5.索引">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
@@ -1803,7 +1920,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"5.索引","level":"1.6.5","depth":2,"next":{"title":"第六部分 常见算法题","level":"1.7","depth":1,"path":"6.常见算法题/README.md","ref":"6.常见算法题/README.md","articles":[{"title":"1.数组","level":"1.7.1","depth":2,"path":"6.常见算法题/1.数组.md","ref":"6.常见算法题/1.数组.md","articles":[]},{"title":"2.字符串","level":"1.7.2","depth":2,"path":"6.常见算法题/2.字符串.md","ref":"6.常见算法题/2.字符串.md","articles":[]},{"title":"3.链表","level":"1.7.3","depth":2,"path":"6.常见算法题/3.链表.md","ref":"6.常见算法题/3.链表.md","articles":[]},{"title":"4.栈与队列","level":"1.7.4","depth":2,"path":"6.常见算法题/4.栈与队列.md","ref":"6.常见算法题/4.栈与队列.md","articles":[]},{"title":"5.二叉树与递归","level":"1.7.5","depth":2,"path":"6.常见算法题/5.二叉树树与递归.md","ref":"6.常见算法题/5.二叉树树与递归.md","articles":[]},{"title":"6.DFS与BFS","level":"1.7.6","depth":2,"path":"6.常见算法题/6.DFS与BFS.md","ref":"6.常见算法题/6.DFS与BFS.md","articles":[]},{"title":"7.贪心与回溯","level":"1.7.7","depth":2,"path":"6.常见算法题/7.贪心与回溯.md","ref":"6.常见算法题/7.贪心与回溯.md","articles":[]},{"title":"8.动态规划","level":"1.7.8","depth":2,"path":"6.常见算法题/8.动态规划.md","ref":"6.常见算法题/8.动态规划.md","articles":[]},{"title":"9.哈希","level":"1.7.9","depth":2,"path":"6.常见算法题/9.哈希.md","ref":"6.常见算法题/9.哈希.md","articles":[]},{"title":"10.算法思想","level":"1.7.10","depth":2,"path":"6.常见算法题/10.算法思想.md","ref":"6.常见算法题/10.算法思想.md","articles":[]},{"title":"附：高频算法题","level":"1.7.11","depth":2,"path":"6.常见算法题/11.附：高频算法题.md","ref":"6.常见算法题/11.附：高频算法题.md","articles":[]}]},"previous":{"title":"4.事务","level":"1.6.4","depth":2,"path":"5.数据库/4.事务.md","ref":"5.数据库/4.事务.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"5.数据库/5.索引.md","mtime":"2020-04-14T14:04:28.084Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T12:52:33.966Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"面试题：SQL语句执行很慢的原因","level":"1.6.6","depth":2,"next":{"title":"第六部分 常见算法题","level":"1.7","depth":1,"path":"6.常见算法题/README.md","ref":"6.常见算法题/README.md","articles":[{"title":"1.数组","level":"1.7.1","depth":2,"path":"6.常见算法题/1.数组.md","ref":"6.常见算法题/1.数组.md","articles":[]},{"title":"2.字符串","level":"1.7.2","depth":2,"path":"6.常见算法题/2.字符串.md","ref":"6.常见算法题/2.字符串.md","articles":[]},{"title":"3.链表","level":"1.7.3","depth":2,"path":"6.常见算法题/3.链表.md","ref":"6.常见算法题/3.链表.md","articles":[]},{"title":"4.栈与队列","level":"1.7.4","depth":2,"path":"6.常见算法题/4.栈与队列.md","ref":"6.常见算法题/4.栈与队列.md","articles":[]},{"title":"5.二叉树与递归","level":"1.7.5","depth":2,"path":"6.常见算法题/5.二叉树树与递归.md","ref":"6.常见算法题/5.二叉树树与递归.md","articles":[]},{"title":"6.DFS与BFS","level":"1.7.6","depth":2,"path":"6.常见算法题/6.DFS与BFS.md","ref":"6.常见算法题/6.DFS与BFS.md","articles":[]},{"title":"7.贪心与回溯","level":"1.7.7","depth":2,"path":"6.常见算法题/7.贪心与回溯.md","ref":"6.常见算法题/7.贪心与回溯.md","articles":[]},{"title":"8.动态规划","level":"1.7.8","depth":2,"path":"6.常见算法题/8.动态规划.md","ref":"6.常见算法题/8.动态规划.md","articles":[]},{"title":"9.哈希","level":"1.7.9","depth":2,"path":"6.常见算法题/9.哈希.md","ref":"6.常见算法题/9.哈希.md","articles":[]},{"title":"10.算法思想","level":"1.7.10","depth":2,"path":"6.常见算法题/10.算法思想.md","ref":"6.常见算法题/10.算法思想.md","articles":[]},{"title":"附：高频算法题","level":"1.7.11","depth":2,"path":"6.常见算法题/11.附：高频算法题.md","ref":"6.常见算法题/11.附：高频算法题.md","articles":[]}]},"previous":{"title":"5.索引","level":"1.6.5","depth":2,"path":"5.数据库/5.索引.md","ref":"5.数据库/5.索引.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"5.数据库/面试题：SQL语句执行很慢的原因.md","mtime":"2020-04-16T06:05:45.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T06:20:55.027Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
