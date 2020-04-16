@@ -229,12 +229,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.6" data-path="../1.C++/1.编译与链接/6.附：常用头文件.html">
+        <li class="chapter " data-level="1.2.1.6" data-path="../1.C++/1.编译与链接/6.链接与符号.html">
             
-                <a href="../1.C++/1.编译与链接/6.附：常用头文件.html">
+                <a href="../1.C++/1.编译与链接/6.链接与符号.html">
             
                     
-                    1.6 附：常用头文件
+                    1.6 链接与符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../1.C++/1.编译与链接/附：常用头文件.html">
+            
+                <a href="../1.C++/1.编译与链接/附：常用头文件.html">
+            
+                    
+                    附：常用头文件
             
                 </a>
             
@@ -759,12 +772,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../1.C++/7.内存模型/2.堆栈、new和delete.html">
+        <li class="chapter " data-level="1.2.7.2" data-path="../1.C++/7.内存模型/2.内存、堆、栈.html">
             
-                <a href="../1.C++/7.内存模型/2.堆栈、new和delete.html">
+                <a href="../1.C++/7.内存模型/2.内存、堆、栈.html">
             
                     
-                    7.2 堆栈、new和delete
+                    7.2 内存、堆、栈
             
                 </a>
             
@@ -772,12 +785,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../1.C++/7.内存模型/3.虚函数表与虚指针.html">
+        <li class="chapter " data-level="1.2.7.3" data-path="../1.C++/7.内存模型/3.new和delete.html">
             
-                <a href="../1.C++/7.内存模型/3.虚函数表与虚指针.html">
+                <a href="../1.C++/7.内存模型/3.new和delete.html">
             
                     
-                    7.3 虚函数表与虚指针
+                    7.3 new和delete
             
                 </a>
             
@@ -817,6 +830,19 @@
             
                     
                     7.6 智能指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.7" data-path="../1.C++/7.内存模型/7.虚函数表与虚指针.html">
+            
+                <a href="../1.C++/7.内存模型/7.虚函数表与虚指针.html">
+            
+                    
+                    7.7 虚函数表与虚指针
             
                 </a>
             
@@ -1436,9 +1462,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../5.数据库/4.事务.html">
+        <li class="chapter " data-level="1.6.4" data-path="../5.数据库/4.事务.md">
             
-                <a href="../5.数据库/4.事务.html">
+                <span>
             
                     
                     4.事务
@@ -1449,12 +1475,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../5.数据库/5.索引.html">
+        <li class="chapter " data-level="1.6.5" data-path="../5.数据库/5.索引.md">
             
-                <a href="../5.数据库/5.索引.html">
+                <span>
             
                     
                     5.索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../5.数据库/面试题：SQL语句执行很慢的原因.html">
+            
+                <a href="../5.数据库/面试题：SQL语句执行很慢的原因.html">
+            
+                    
+                    面试题：SQL语句执行很慢的原因
             
                 </a>
             
@@ -1759,11 +1798,10 @@
     
 					<section class="normal markdown-section">
 						
-						<hr>
-<h2 id="11-&#x4EC0;&#x4E48;&#x662F;socket&#xFF1F;">1.1 &#x4EC0;&#x4E48;&#x662F;<code>Socket</code>&#xFF1F;</h2>
+						<h1 id="socket"><code>Socket</code></h1>
 <p>&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;(&#x5957;&#x63A5;&#x5B57;&#x7F16;&#x7A0B;)&#x5C31;&#x662F;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x4F7F;&#x4E24;&#x53F0;&#x8054;&#x7F51;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x4E92;&#x76F8;&#x4EA4;&#x6362;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x5957;&#x63A5;&#x5B57;&#x5C31;&#x662F;&#x7528;&#x6765;&#x8FDE;&#x63A5;&#x7F51;&#x7EDC;&#x7684;&#x5DE5;&#x5177;&#x3002;
 &#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x8FDB;&#x7A0B;&#x662F;&#x901A;&#x8FC7;<code>socket</code>&#x6765;&#x901A;&#x4FE1;&#x7684;&#xFF0C;&#x90A3;&#x4EC0;&#x4E48;&#x662F;<code>socket</code>&#x5462;&#xFF1F;<code>socket</code>&#x8D77;&#x6E90;&#x4E8E;Unix&#xFF0C;&#x800C;Unix/Linux&#x57FA;&#x672C;&#x54F2;&#x5B66;&#x4E4B;&#x4E00;&#x5C31;&#x662F;&#x201C;&#x4E00;&#x5207;&#x7686;&#x6587;&#x4EF6;&#x201D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x7528;<code>open</code> &#x2013;&gt; <code>write/read</code> &#x2013;&gt; <code>close</code>&#x6A21;&#x5F0F;&#x6765;&#x64CD;&#x4F5C;&#x3002;</p>
-<h2 id="12-&#x7F51;&#x7EDC;&#x4E2D;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x5982;&#x4F55;&#x901A;&#x4FE1;&#xFF1F;">1.2 &#x7F51;&#x7EDC;&#x4E2D;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x5982;&#x4F55;&#x901A;&#x4FE1;&#xFF1F;</h2>
+<h2 id="&#x7F51;&#x7EDC;&#x4E2D;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x5982;&#x4F55;&#x901A;&#x4FE1;&#xFF1F;">&#x7F51;&#x7EDC;&#x4E2D;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x5982;&#x4F55;&#x901A;&#x4FE1;&#xFF1F;</h2>
 <p><code>socket</code>&#x662F;&#x4E00;&#x4E2A;&#x4E94;&#x5143;&#x7EC4;</p>
 <table>
 <thead>
@@ -1780,7 +1818,7 @@
 </tbody>
 </table>
 <p>&#x5C31;&#x53EF;&#x4EE5;&#x6807;&#x8BC6;&#x7F51;&#x7EDC;&#x7684;&#x8FDB;&#x7A0B;&#x4E86;&#xFF0C;&#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x6807;&#x5FD7;&#x4E0E;&#x5176;&#x5B83;&#x8FDB;&#x7A0B;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
-<h2 id="13-socket&#x6D41;&#x7A0B;">1.3 socket&#x6D41;&#x7A0B;</h2>
+<h2 id="socket&#x6D41;&#x7A0B;">socket&#x6D41;&#x7A0B;</h2>
 <p><img src="https://i.loli.net/2020/04/13/qrHvgsVoyhZBSEF.png" alt="socket&#x6D41;&#x7A0B;"></p>
 <blockquote>
 <p>Tips:&#x5728;Linux&#x4E0A;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;<code>man</code>&#x547D;&#x4EE4;&#x53BB;&#x67E5;&#x8BE2;&#x6BCF;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6216;&#x8005;&#x5934;&#x6587;&#x4EF6;</p>
@@ -1923,6 +1961,60 @@
     &#x6210;&#x529F;&#xFF1A;&#x8FD4;&#x56DE;&#x63A5;&#x6536;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x9047;&#x5230;&#x6587;&#x4EF6;&#x5C3E;(EOF)&#x5219;&#x8FD4;&#x56DE;<span class="hljs-number">0</span>
     &#x5931;&#x8D25;&#xFF1A;<span class="hljs-number">-1</span>
 </code></pre>
+<h2 id="&#x4E3B;&#x673A;&#x5B57;&#x8282;&#x5E8F;&#x4E0E;&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x5E8F;">&#x4E3B;&#x673A;&#x5B57;&#x8282;&#x5E8F;&#x4E0E;&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x5E8F;</h2>
+<h3 id="&#x4E3B;&#x673A;&#x5B57;&#x8282;&#x5E8F;">&#x4E3B;&#x673A;&#x5B57;&#x8282;&#x5E8F;</h3>
+<p>&#x6982;&#x5FF5;&#xFF1A;&#x4E3B;&#x673A;&#x5B57;&#x8282;&#x5E8F;&#x53C8;&#x53EB;CPU&#x5B57;&#x8282;&#x5E8F;&#xFF0C;&#x5176;&#x4E0D;&#x662F;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x7531; CPU &#x6307;&#x4EE4;&#x96C6;&#x67B6;&#x6784;&#x51B3;&#x5B9A;&#x7684;&#x3002;&#x4E3B;&#x673A;&#x5B57;&#x8282;&#x5E8F;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF1A;</p>
+<ul>
+<li>&#x5927;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;&#xFF08;Big Endian&#xFF09;&#xFF1A;&#x9AD8;&#x5E8F;&#x5B57;&#x8282;&#x5B58;&#x50A8;&#x5728;&#x4F4E;&#x4F4D;&#x5730;&#x5740;&#xFF0C;&#x4F4E;&#x5E8F;&#x5B57;&#x8282;&#x5B58;&#x50A8;&#x5728;&#x9AD8;&#x4F4D;&#x5730;&#x5740;</li>
+<li>&#x5C0F;&#x7AEF;&#x5B57;&#x8282;&#x5E8F;&#xFF08;Little Endian&#xFF09;&#xFF1A;&#x9AD8;&#x5E8F;&#x5B57;&#x8282;&#x5B58;&#x50A8;&#x5728;&#x9AD8;&#x4F4D;&#x5730;&#x5740;&#xFF0C;&#x4F4E;&#x5E8F;&#x5B57;&#x8282;&#x5B58;&#x50A8;&#x5728;&#x4F4E;&#x4F4D;&#x5730;&#x5740;</li>
+</ul>
+<p><strong>&#x5B58;&#x50A8;&#x65B9;&#x5F0F;</strong>
+32 &#x4F4D;&#x6574;&#x6570;<code>0x12345678</code>&#x662F;&#x4ECE;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4E3A;<code>0x00</code>&#x7684;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x5B58;&#x653E;&#xFF0C;&#x5219;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5185;&#x5B58;&#x5730;&#x5740;</th>
+<th>0x00</th>
+<th>0x01</th>
+<th>0x02</th>
+<th>0x03</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5927;&#x7AEF;</td>
+<td>12</td>
+<td>34</td>
+<td>56</td>
+<td>78</td>
+</tr>
+<tr>
+<td>&#x5C0F;&#x7AEF;</td>
+<td>78</td>
+<td>56</td>
+<td>34</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5927;&#x7AEF;
+<img src="https://i.loli.net/2020/04/16/KBpzolLvwIAMHiu.png" alt="&#x5927;&#x7AEF;">
+&#x5C0F;&#x7AEF;
+<img src="https://i.loli.net/2020/04/16/1TSXYJDQMnRBqdp.png" alt="&#x5C0F;&#x7AEF;">
+&#x5224;&#x65AD;&#x5927;&#x7AEF;&#x3001;&#x5C0F;&#x7AEF;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x5224;&#x65AD;&#x5927;&#x7AEF;&#x3001;&#x5C0F;&#x7AEF;</span>
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0x12345678</span>;
+
+<span class="hljs-keyword">if</span> (*((<span class="hljs-keyword">char</span>*)&amp;i) == <span class="hljs-number">0x12</span>)
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;&#x5927;&#x7AEF;&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">else</span>    
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;&#x5C0F;&#x7AEF;&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+</code></pre>
+<h3 id="&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x5E8F;">&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x5E8F;</h3>
+<p>&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x987A;&#x5E8F;&#x662F;TCP/IP&#x4E2D;&#x89C4;&#x5B9A;&#x597D;&#x7684;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x8868;&#x793A;&#x683C;&#x5F0F;&#xFF0C;&#x5B83;&#x4E0E;&#x5177;&#x4F53;&#x7684; CPU &#x7C7B;&#x578B;&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7B49;&#x65E0;&#x5173;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x4FDD;&#x91CD;&#x6570;&#x636E;&#x5728;&#x4E0D;&#x540C;&#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x4F20;&#x8F93;&#x65F6;&#x80FD;&#x591F;&#x88AB;&#x6B63;&#x786E;&#x89E3;&#x91CA;&#x3002;</p>
+<ul>
+<li>&#x7F51;&#x7EDC;&#x5B57;&#x8282;&#x987A;&#x5E8F;&#x91C7;&#x7528;&#xFF1A;&#x5927;&#x7AEF;&#xFF08;Big Endian&#xFF09;&#x6392;&#x5217;&#x65B9;&#x5F0F;&#x3002;</li>
+</ul>
  <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1965,7 +2057,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"6.socket网络编程","level":"1.5.6","depth":2,"next":{"title":"7.selcet, poll与epoll","level":"1.5.7","depth":2,"path":"4.TCP-IP详解/7.select、poll与epoll.md","ref":"4.TCP-IP详解/7.select、poll与epoll.md","articles":[]},"previous":{"title":"5.应用层","level":"1.5.5","depth":2,"path":"4.TCP-IP详解/5.应用层.md","ref":"4.TCP-IP详解/5.应用层.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"4.TCP-IP详解/6.socket网络编程.md","mtime":"2020-04-14T14:01:57.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T12:52:33.966Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"6.socket网络编程","level":"1.5.6","depth":2,"next":{"title":"7.selcet, poll与epoll","level":"1.5.7","depth":2,"path":"4.TCP-IP详解/7.select、poll与epoll.md","ref":"4.TCP-IP详解/7.select、poll与epoll.md","articles":[]},"previous":{"title":"5.应用层","level":"1.5.5","depth":2,"path":"4.TCP-IP详解/5.应用层.md","ref":"4.TCP-IP详解/5.应用层.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","back-to-top-button","donate","copy-code-button","todo","-lunr","-search","search-pro","klipse","cuav-chapters","heading-anchors","theme-fexa","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search-pro":{},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"theme-fexa":{},"donate":{"alipay":"https://i.loli.net/2020/04/14/5kcD3fZaEHBOSub.png","alipayText":"使不得啊！","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Lzy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Lzy's Interview Notebook","language":"zh-hans","gitbook":"3.2.3","description":"Lzy's Interview Notebook"},"file":{"path":"4.TCP-IP详解/6.socket网络编程.md","mtime":"2020-04-16T03:03:40.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T06:20:55.027Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
