@@ -21,7 +21,8 @@
     "klipse",
     "cuav-chapters",
     "heading-anchors",
-    "theme-fexa"
+    "theme-fexa",
+    "katex"
 ],
 "pluginsConfig": {
     "donate": {
